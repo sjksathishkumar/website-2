@@ -10,13 +10,12 @@
     <meta name="author" content="Bass PRIS"/>
     <meta name="publisher" content="Bass Desio"/>
     <meta name="copyright" content="Bass PRIS"/>
-    <meta http-equiv="Reply-to" content=antony@basspris.com/>
+    <meta http-equiv="Reply-to" content="antony@basspris.com"/>
     <meta name="creation_Date" content="12/06/2011"/>
     <meta name="expires" content="11 June 2222"/>
     <meta name="language" content="EN"/>
     <meta name="rating" content="general"/>
     <meta name="revisit-after" content="7 days"/>
-
 
     <title>Payroll Services | Payroll Application | Payroll Outsource | Recruitment Services |Payroll and Recruitement System | Bass PRIS</title>
 
@@ -29,26 +28,39 @@
     <link rel="stylesheet" href="css/flexslider.css"/>
     <link href="assets/bxslider/jquery.bxslider.css" rel="stylesheet" />
     <link href="assets/fancybox/source/jquery.fancybox.css" rel="stylesheet" />
-
     <link rel="stylesheet" href="assets/revolution_slider/css/rs-style.css" media="screen">
     <link rel="stylesheet" href="assets/revolution_slider/rs-plugin/css/settings.css" media="screen">
-
-    <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/style-responsive.css" rel="stylesheet" />
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
-    <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
-    <![endif]-->
   </head>
 
   <body>
     <!--header start-->
-   <?php
-   include 'header.php'
-   ?>
+    <header class="header-frontend">
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="fa fa-bar"></span>
+                        <span class="fa fa-bar"></span>
+                        <span class="fa fa-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.php">Bass<span>Pris</span></a>
+                </div>
+                <div class="navbar-collapse collapse ">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="index.php">Home</a></li>
+                        <li><a href="about-us.php">About</a></li>
+                        <li><a href="services.php">Services</a></li>
+                        <li><a href="tutorials.php">Tutorials</a></li>
+                        <li><a href="pricing.php">Pricing</a></li>
+                        <li><a href="blog.php">Blog</a></li>
+                        <li><a href="contact-us.php">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
     <!--header end-->
 
      <!-- revolution slider start -->
@@ -94,74 +106,48 @@
                          system with comprehensive features and <br>
                          simplified solution to prepare pay slips.
                      </div>
-                    <!-- <a class="caption lfr btn yellow slide_btn" href="http://localhost/basspris/admin/home.php" target="_blank"
-                        data-x="670"
-                        data-y="400"
-                        data-speed="400"
-                        data-start="3500"
-                        data-easing="easeOutExpo">
-                         Watch Dashboard
-                     </a> -->
-
                  </li>
 
                  <!-- 2nd slide  -->
                  <li data-transition="fade" data-slotamount="8" data-masterspeed="700" data-delay="9400" data-thumb="">
-                     <!-- THE MAIN IMAGE IN THE FIRST SLIDE
-                     <img src="img/banner/banner_bg.jpg" alt="">  -->
-                     <div class="caption lft slide_title"
+                     <div class="caption lfl slide_item_left"
                           data-x="10"
-                          data-y="125"
+                          data-y="70"
                           data-speed="400"
                           data-start="1500"
+                          data-easing="easeOutBack">
+                         <img src="img/banner/ban2.png" alt="Image 1">
+                     </div>
+                     <div class="caption lfr slide_title"
+                          data-x="670"
+                          data-y="120"
+                          data-speed="400"
+                          data-start="1000"
                           data-easing="easeOutExpo">
-                       Simple, affordable, accurate and fast
+                      Bass PRIS makes payroll process
+                      <br> very simple
 
                      </div>
-                     <div class="caption lft slide_subtitle dark-text"
-                          data-x="10"
-                          data-y="180"
+
+                     <div class="caption lfr slide_subtitle dark-text"
+                          data-x="670"
+                          data-y="190"
                           data-speed="400"
                           data-start="2000"
                           data-easing="easeOutExpo">
 
                      </div>
-                     <div class="caption lft slide_desc dark-text"
-                          data-x="10"
-                          data-y="240"
+                     <div class="caption lfr slide_desc"
+                          data-x="670"
+                          data-y="260"
                           data-speed="400"
                           data-start="2500"
                           data-easing="easeOutExpo">
-                            BASS PRIS offer fully automated and customized<br>
-                            cloud based payroll and recruitment solution.
+                         BASS PRIS, a online payroll information <br>
+                         system with comprehensive features and <br>
+                         simplified solution to prepare pay slips.
                      </div>
-                   <!--  <a class="caption lft slide_btn btn red slide_item_left" href="#" target="_blank"
-                        data-x="10"
-                        data-y="360"
-                        data-speed="400"
-                        data-start="3000"
-                        data-easing="easeOutExpo">
-                         Purchase Now
-                     </a>  -->
-                     <div class="caption lft start"
-                          data-x="640"
-                          data-y="55"
-                          data-speed="400"
-                          data-start="2000"
-                          data-easing="easeOutBack"  >
-                         <img src="img/banner/man.png" alt="man">
-                     </div>
-                     <div class="caption lft slide_item_right"
-                          data-x="330"
-                          data-y="20"
-                          data-speed="500"
-                          data-start="5000"
-                          data-easing="easeOutBack">
-                         <img src="img/banner/test_man.png" id="rev-hint2" alt="txt img">
-                     </div>
-
                  </li>
-
                  <!-- 3rd slide  -->
                  <li data-transition="fade" data-slotamount="7" data-masterspeed="300" data-delay="9400" data-thumb="">
                     <!-- <img src="img/banner/red-bg.jpg" alt="">      -->
@@ -173,39 +159,6 @@
                           data-easing="easeOutBack">
                          <img src="img/banner/imac.png" alt="Image 1">
                      </div>
-                <!--     <div class="caption lfl slide_item_right"
-                          data-x="25"
-                          data-y="345"
-                          data-speed="1200"
-                          data-start="2000"
-                          data-easing="easeOutBack">
-                         <img src="img/banner/tab.png" alt="Image 1">
-                     </div>
-                     <div class="caption lfl slide_item_right"
-                          data-x="200"
-                          data-y="330"
-                          data-speed="1200"
-                          data-start="2500"
-                          data-easing="easeOutBack">
-                         <img src="img/banner/mobile.png" alt="Image 1">
-                     </div>
-                     <div class="caption lfl slide_item_right"
-                          data-x="250"
-                          data-y="230"
-                          data-speed="1200"
-                          data-start="3000"
-                          data-easing="easeOutBack">
-                         <img src="img/banner/laptop.png" alt="Image 1">
-                     </div>
-                     <div class="caption lfl slide_item_right"
-                          data-x="165"
-                          data-y="30"
-                          data-speed="500"
-                          data-start="5000"
-                          data-easing="easeOutBack">
-                         <img src="img/banner/text_imac.png" id="rev-hint1" alt="Image 1">
-                     </div> -->
-
                      <div class="caption lfr slide_title slide_item_left yellow-txt"
                           data-x="670"
                           data-y="145"
@@ -233,10 +186,7 @@
                            <br>insource team,Bass Pris will provide a full
                            <br>pledged support to all the payroll compliance.
                      </div>
-
-
                  </li>
-
              </ul>
             <div class="tp-bannertimer tp-top"></div>
          </div>
@@ -295,7 +245,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-3">
-                    <a href="purchase.php" class="btn btn-danger purchase-btn">Purchase now</a>
+                    <a href="pricing.php" class="btn btn-danger purchase-btn">Purchase now</a>
                 </div>
             </div>
             <!--quote end-->
@@ -313,7 +263,7 @@
                 <div class="col-lg-6 col-sm-6">
                     <h1>Payroll and Recruitment Information System</h1>
                     <p>BASS PRIS is indianized fully automated cloud based solution.</p>
-                    <a href="javascript:;" class="btn btn-purchase">Purchase now</a>
+                    <a href="pricing.php" class="btn btn-purchase">Purchase now</a>
                 </div>
             </div>
         </div>

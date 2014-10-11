@@ -4,18 +4,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; iso-8859-1"/>
-<meta name="ROBOTS" content="INDEX, FOLLOW"/>
-<meta name="description" content=“Call +91-7299040580 email us info@basspris.com for recruitment consulting, recruitment outsource, payroll outsource and payroll consulting"/>
-<meta name="keywords" content=“payroll services, payroll consultants, pris, payroll and recruitment information system, payroll processing"/>
-<meta name="author" content="Bass PRIS"/>
-<meta name="publisher" content="Bass Desio"/>
-<meta name="copyright" content="Bass PRIS"/>
-<meta http-equiv="Reply-to" content=antony@basspris.com/>
-<meta name="creation_Date" content="12/06/2011"/>
-<meta name="expires" content="11 June 2222"/>
-<meta name="language" content="EN"/>
-<meta name="rating" content="general"/>
-<meta name="revisit-after" content="7 days"/>
+    <meta name="ROBOTS" content="INDEX, FOLLOW"/>
+    <meta name="description" content="Call +91-7299040580 email us info@basspris.com for recruitment consulting, recruitment outsource, payroll outsource and payroll consulting"/>
+    <meta name="keywords" content="payroll services, payroll consultants, pris, payroll and recruitment information system, payroll processing"/>
+    <meta name="author" content="Bass PRIS"/>
+    <meta name="publisher" content="Bass Desio"/>
+    <meta name="copyright" content="Bass PRIS"/>
+    <meta http-equiv="Reply-to" content="antony@basspris.com"/>
+    <meta name="creation_Date" content="12/06/2011"/>
+    <meta name="expires" content="11 June 2222"/>
+    <meta name="language" content="EN"/>
+    <meta name="rating" content="general"/>
+    <meta name="revisit-after" content="7 days"/>
 
 
     <title>Contact US | Bass PRIS, a payroll and recruitment information system | outsourcing team</title>
@@ -43,10 +43,32 @@
   </head>
 
   <body>
-     <!--header start-->
-     <?php
-     include 'header.php';
-     ?>
+    <!--header start-->
+    <header class="header-frontend">
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="fa fa-bar"></span>
+                        <span class="fa fa-bar"></span>
+                        <span class="fa fa-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.php">Bass<span>Pris</span></a>
+                </div>
+                <div class="navbar-collapse collapse ">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="about-us.php">About</a></li>
+                        <li><a href="services.php">Services</a></li>
+                        <li><a href="tutorials.php">Tutorials</a></li>
+                        <li><a href="pricing.php">Pricing</a></li>
+                        <li><a href="blog.php">Blog</a></li>
+                        <li class="active"><a href="contact-us.php">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
     <!--header end-->
 
     <!--breadcrumbs start-->

@@ -10,16 +10,14 @@
     <meta name="author" content="Bass PRIS"/>
     <meta name="publisher" content="Bass Desio"/>
     <meta name="copyright" content="Bass PRIS"/>
-    <meta http-equiv="Reply-to" content=antony@basspris.com/>
+    <meta http-equiv="Reply-to" content="antony@basspris.com"/>
     <meta name="creation_Date" content="12/06/2011"/>
     <meta name="expires" content="11 June 2222"/>
     <meta name="language" content="EN"/>
     <meta name="rating" content="general"/>
     <meta name="revisit-after" content="7 days"/>
 
-
     <title>Bass PRIS | Payroll and Recruitment Information System | Payroll and Recruitment outsource service provider </title>
-
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -30,23 +28,39 @@
     <link rel="stylesheet" href="css/flexslider.css"/>
     <link href="assets/bxslider/jquery.bxslider.css" rel="stylesheet" />
 
-
       <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/style-responsive.css" rel="stylesheet" />
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
-    <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
-    <![endif]-->
   </head>
 
   <body>
-     <!--header start-->
-     <?php
-     include 'header.php';
-     ?>
+    <!--header start-->
+    <header class="header-frontend">
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="fa fa-bar"></span>
+                        <span class="fa fa-bar"></span>
+                        <span class="fa fa-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.php">Bass<span>Pris</span></a>
+                </div>
+                <div class="navbar-collapse collapse ">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.php">Home</a></li>
+                        <li class="active"><a href="about-us.php">About</a></li>
+                        <li><a href="services.php">Services</a></li>
+                        <li><a href="tutorials.php">Tutorials</a></li>
+                        <li><a href="pricing.php">Pricing</a></li>
+                        <li><a href="blog.php">Blog</a></li>
+                        <li><a href="contact-us.php">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
     <!--header end-->
 
     <!--breadcrumbs start-->
@@ -58,8 +72,7 @@
                 </div>
                 <div class="col-lg-8 col-sm-8">
                     <ol class="breadcrumb pull-right">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Pages</a></li>
+                        <li><a href="index.php">Home</a></li>
                         <li class="active">About</li>
                     </ol>
                 </div>
@@ -71,6 +84,19 @@
     <!--container start-->
     <div class="container">
         <div class="row">
+            <div class="col-lg-12 about">
+                <h3>Welcome to FlatLab</h3>
+                <p align="justify">
+                    Welcome To Avada
+                    Lid est laborum dolo rumes fugats untras. Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets.. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore dolore magnm aliquam quaerat voluptatem.
+                </p>
+                <p align="justify">
+                    Aenean nibh ante, lacinia non tincidunt nec, lobortis ut tellus. Sed in porta diam. Suspendisse potenti. Donec luctus ullamcorper nulla. Duis nec velit odio.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
             <div class="col-lg-5">
                 <div class="span5 about-carousel">
                     <div id="myCarousel" class="carousel slide">
@@ -79,63 +105,38 @@
                             <div class="active item">
                                 <img src="img/about_1.jpg" alt="">
                                 <div class="carousel-caption">
-                                    <p></p>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <img src="img/about_2.jpg" alt="">
-                                <div class="carousel-caption">
-                                    <p></p>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <img src="img/about_1.jpg" alt="">
-                                <div class="carousel-caption">
-                                    <p></p>
+                                    <p>Donec luctus ullamcorper nulla</p>
                                 </div>
                             </div>
                         </div>
-                        <!-- Carousel nav -->
-                        <a class="carousel-control left" href="#myCarousel" data-slide="prev">
-                           <i class="fa fa-angle-left"></i>
-                        </a>
-                        <a class="carousel-control right" href="#myCarousel" data-slide="next">
-                          <i class="fa fa-angle-right"></i>
-                        </a>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-7 about">
-                <h3>Welcome to BassPris</h3>
-                <p>
-                   BASS PRIS, a online payroll information system with comprehensive features and simplified solution to prepare pay slips.
-<br>BASS PRIS is in-sourcing the outsource and supported by team of highly qualified professionals and HR Experts with vast industry experience.
 
+            <div class="col-lg-6">
+                <div class="full-width-media-text">
+                    <h3>Dropcap</h3>
+                    <p align="justify">
+                        <span class="dropcap2">F</span>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales at. Nulla tellus elit, varius non commodo eget, mattis vel eros. In sed ornare nulla. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut.
+                    </p>
+                </div>
+            </div>
+        </div>    
+
+        <div class="col-lg-12">
+            <div class="full-width-media-text">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales at. Nulla tellus elit, varius non commodo eget, mattis vel eros. In sed ornare nulla.
                 </p>
+                <blockquote>
+                    <p align="justify">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales at. Nulla tellus elit, varius non commodo eget, mattis vel eros. In sed ornare nulla. Nullam quis risus eget urna mollis ornare vel eu leo. sumon cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut.
+                    </p>
+                </blockquote>
             </div>
         </div>
-        <div class="row">
-            <div class="hiring">
-                <div class="col-lg-6 col-sm-6">
-                      <!--  <div class="icon-wrap ico-bg round">
-                    <i class="fa fa-desktop"></i>
-                    </div>  -->
-                    <div class="content">
-                        <h3 class="title">iOS / Mac OS Developer</h3>
-                        <p>Suspendisse dignissim in sem eget pulvinar. Mauris aliquam nulla at libero pretium, eu tincidunt nulla molestie pulvinar posuere.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-sm-6">
-                  <!--  <div class="icon-wrap ico-bg round">
-                        <i class="fa fa-user"></i>
-                    </div>   -->
-                    <div class="content">
-                        <h3 class="title">Frontend Developer</h3>
-                        <p>Suspendisse dignissim in sem eget pulvinar. Mauris aliquam nulla at libero pretium, eu tincidunt nulla molestie pulvinar posuere.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </div>
 
      <div class="gray-box">
@@ -182,28 +183,28 @@
                      <div class="about-skill-meter">
                          <div class="progress progress-xs">
                              <div style="width: 60%;" aria-valuemax="100" aria-valuemin="0" aria-valuenow="60" role="progressbar" class="progress-bar progress-bar-danger">
-                                 <span class="sr-only">Web Design : 60% Complete</span>
+                                 <span class="sr-only">Web Design</span>
                              </div>
                          </div>
                      </div>
                      <div class="about-skill-meter">
                          <div class="progress progress-xs">
                              <div style="width: 90%;" aria-valuemax="100" aria-valuemin="0" aria-valuenow="60" role="progressbar" class="progress-bar progress-bar-danger">
-                                 <span class="sr-only">Html/CSS : 90% Complete</span>
+                                 <span class="sr-only">Html/CSS </span>
                              </div>
                          </div>
                      </div>
                      <div class="about-skill-meter">
                          <div class="progress progress-xs">
                              <div style="width: 70%;" aria-valuemax="100" aria-valuemin="0" aria-valuenow="60" role="progressbar" class="progress-bar progress-bar-danger">
-                                 <span class="sr-only">Wordpress : 70% Complete</span>
+                                 <span class="sr-only">Wordpress</span>
                              </div>
                          </div>
                      </div>
                      <div class="about-skill-meter">
                          <div class="progress progress-xs">
                              <div style="width: 55%;" aria-valuemax="100" aria-valuemin="0" aria-valuenow="60" role="progressbar" class="progress-bar progress-bar-danger">
-                                 <span class="sr-only">Graphic Design : 55% Complete</span>
+                                 <span class="sr-only">Graphic Design </span>
                              </div>
                          </div>
                      </div>
@@ -220,7 +221,7 @@
             </div>
             <div class="col-lg-4">
                 <div class="person text-center">
-                    <img src="img/team/team_img1.png" alt="">
+                    <img src="img/team/team_img1.jpg" alt="bass biz image">
                 </div>
                 <div class="person-info text-center">
                     <h4>
@@ -239,7 +240,7 @@
             </div>
             <div class="col-lg-4">
                 <div class="person text-center">
-                    <img src="img/team/team_img2.png" alt="">
+                    <img src="img/team/team_img2.jpg" alt="bass besio image">
                 </div>
                 <div class="person-info text-center">
                     <h4>
@@ -258,7 +259,7 @@
             </div>
             <div class="col-lg-4">
                 <div class="person text-center">
-                    <img src="img/team/team_img3.png" alt="">
+                    <img src="img/team/team_img3.jpg" alt="bass techs image">
                 </div>
                 <div class="person-info text-center">
                     <h4>
@@ -300,7 +301,7 @@
     <script src="js/common-scripts.js"></script>
 
 
-  <script>
+    <script>
       $(window).load(function() {
           $('[data-zlname = reverse-effect]').mateHover({
               position: 'y-reverse',
