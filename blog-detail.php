@@ -11,31 +11,47 @@
     <title>BassPris  | Blog Details</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/theme.css" rel="stylesheet">
-    <link href="css/bootstrap-reset.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/theme.css" rel="stylesheet">
+    <link href="../css/bootstrap-reset.css" rel="stylesheet">
     <!--external css-->
-    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link rel="stylesheet" href="css/flexslider.css"/>
-    <link href="assets/bxslider/jquery.bxslider.css" rel="stylesheet" />
-
+    <link href="../assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/flexslider.css"/>
+    <link href="../assets/bxslider/jquery.bxslider.css" rel="stylesheet" />
 
       <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/style-responsive.css" rel="stylesheet" />
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/style-responsive.css" rel="stylesheet" />
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
-    <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
-    <![endif]-->
   </head>
 
   <body>
      <!--header start-->
-     <?php
-     include 'header.php';
-     ?>
+    <header class="header-frontend">
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="fa fa-bar"></span>
+                        <span class="fa fa-bar"></span>
+                        <span class="fa fa-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../index.php">Bass<span>Pris</span></a>
+                </div>
+                <div class="navbar-collapse collapse ">
+                    <ul class="nav navbar-nav">
+                        <li><a href="../index.php">Home</a></li>
+                        <li><a href="../about-us.php">About</a></li>
+                        <li><a href="../services.php">Services</a></li>
+                        <li><a href="../tutorials.php">Tutorials</a></li>
+                        <li><a href="../pricing.php">Pricing</a></li>
+                        <li class="active"><a href="index.php">Blog</a></li>
+                        <li><a href="../contact-us.php">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
     <!--header end-->
 
     <!--breadcrumbs start-->
@@ -47,9 +63,8 @@
                 </div>
                 <div class="col-lg-8 col-sm-8">
                     <ol class="breadcrumb pull-right">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Pages</a></li>
-                        <li class="active">Blog Details</li>
+                        <li><a href="../index.php">Home</a></li>
+                        <li class="active">Blog</li>
                     </ol>
                 </div>
             </div>
@@ -97,7 +112,7 @@
                         </div>
                         <div class="col-lg-10 col-sm-10">
                             <div class="blog-img">
-                                <img src="img/blog/img1.jpg" alt=""/>
+                                <img src="../img/blog/img1.jpg" alt=""/>
                             </div>
 
                         </div>
@@ -108,10 +123,20 @@
                                 By <a href="#">Admin</a>
                             </div>
                             <ul class="list-unstyled">
-                                <li><a href="javascript:;"><em>travel</em></a></li>
-                                <li><a href="javascript:;"><em>tour</em></a></li>
-                                <li><a href="javascript:;"><em>recreation</em></a></li>
-                                <li><a href="javascript:;"><em>tourism</em></a></li>
+                                <?php
+                                    include '../db-connect.php';
+                                    $post_id = $_GET['post_id'];
+                                    $related_tag_id = '0';
+                                    $query= mysqli_query($con,"select t.tag_id,t.tag_name from article_tag_map tm join article p on p.post_id = tm.post_id join article_tag t on t.tag_id = tm.tag_id where p.post_id = '$post_id'");
+                                    while($que = mysqli_fetch_row($query))
+                                    {
+                                ?>
+                                <li>
+                                <a href="tag-view.php?tag_id=<?php echo $que['0']; ?>"><em><?php $related_tag_id = $que['0']; echo ucfirst($que['1']); ?></em></a>
+                                </li>
+                                <?php
+                                    }
+                                ?>
                             </ul>
                             <div class="shate-view">
                                 <ul class="list-unstyled">
@@ -123,114 +148,29 @@
                         </div>
                         <div class="col-lg-10 col-sm-10">
                             <h1><strong><span> <?php echo $post['post_title']; ?></span></strong></h1>
-
-
-            <p><?php echo '<div align="justify">'.$post['post_content'].'</div>'; ?></p>
-                <p>&nbsp;</p>
-
-                              <div class="media">
-                                <h3>Comments</h3>
-                                <hr>
-                                <a class="pull-left" href="javascript:;">
-                                    <img class="media-object" src="img/avatar1.jpg" alt="">
-                                </a>
-                                <div class="media-body">
-                                    <h4 class="media-heading">
-                                        Anjelina Joli <span>|</span>
-                                        <span>12 July 2013, 10:20 </span>
-                                    </h4>
-                                    <p>
-                                        Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-                                    </p>
-                                    <a href="javascript:;">Reply</a>
-                                    <hr>
-                                    <!-- Nested media object -->
-                                    <div class="media">
-                                        <a class="pull-left" href="javascript:;">
-                                            <img class="media-object" src="img/avatar2.jpg" alt="">
-                                        </a>
-                                        <div class="media-body">
-                                            <h4 class="media-heading">
-                                                Tom Cruse <span>|</span>
-                                                <span>12 July 2013, 10:30 </span>
-                                            </h4>
-                                            <p>
-                                                Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-                                            </p>
-                                            <a href="javascript:;">Reply</a>
-                                        </div>
-                                    </div>
-                                    <!--end media-->
-                                    <hr>
-                                    <div class="media">
-                                        <a class="pull-left" href="javascript:;">
-                                            <img class="media-object" src="img/avatar1.jpg" alt="">
-                                        </a>
-                                        <div class="media-body">
-                                            <h4 class="media-heading">
-                                                Nicol Kidman <span>|</span>
-                                                <span>12 July 2013, 10:40 </span>
-                                            </h4>
-                                            <p>
-                                                Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-                                            </p>
-                                            <a href="javascript:;">Reply</a>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <!--end media-->
-                                </div>
-                            </div>
-                            <div class="media">
-                                <a class="pull-left" href="javascript:;">
-                                    <img class="media-object" src="img/avatar2.jpg" alt="">
-                                </a>
-                                <div class="media-body">
-                                    <h4 class="media-heading">
-                                        Tom Cruse <span>|</span>
-                                        <span>12 July 2013, 11:10 </span>
-                                    </h4>
-                                    <p>
-                                        Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-                                    </p>
-                                    <a href="javascript:;">Reply</a>
-                                </div>
-                            </div>
-                            <div class="post-comment">
-                                <h3 class="skills">Post Comments</h3>
-                                <form class="form-horizontal" role="form">
-                                    <div class="form-group">
-                                        <div class="col-lg-4">
-                                            <input type="text" placeholder="Name" class="col-lg-12 form-control">
-                                        </div>
-
-                                        <div class="col-lg-4">
-                                            <input type="text" placeholder="Email" class="col-lg-12 form-control">
-                                        </div>
-
-                                        <div class="col-lg-4">
-                                            <input type="text" placeholder="2*five=? *" class="col-lg-12 form-control">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-lg-12">
-                                            <textarea placeholder="Message" rows="8" class=" form-control"></textarea>
-                                        </div>
-                                    </div>
-                                    <p>
-                                        <button type="submit" class="btn btn-danger pull-right">Post Comment</button>
-                                    </p>
-                                </form>
-                            </div>
+                            <p><?php echo '<div align="justify">'.$post['post_content'].'</div>'; ?></p>
+                            <p>&nbsp;</p>
 
                         </div>
                     </div>
                 </div>
+                <?php
+                    }
+                ?>
+                <div id="disqus_thread"></div>
+                <script type="text/javascript">
+                    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                    var disqus_shortname = 'basspris'; // required: replace example with your forum shortname
 
+                    /* * * DON'T EDIT BELOW THIS LINE * * */
+                    (function() {
+                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
             </div>
-                        <?php
-                      }
-                      ?>
 
             <div class="col-lg-3">
                 <div class="blog-side-item">
@@ -240,11 +180,22 @@
                     <div class="category">
                         <h3>Categories</h3>
                         <ul class="list-unstyled">
-                            <li><a href="javascript:;"><i class="  fa fa-angle-right"></i> Animals</a></li>
-                            <li><a href="javascript:;"><i class="  fa fa-angle-right"></i> Landscape</a></li>
-                            <li><a href="javascript:;"><i class="  fa fa-angle-right"></i> Portait</a></li>
-                            <li><a href="javascript:;"><i class="  fa fa-angle-right"></i> Wild Life</a></li>
-                            <li><a href="javascript:;"><i class="  fa fa-angle-right"></i> Video</a></li>
+                        <?php
+                            $query= "select * from article_tag";
+                            $result = $sql->query($query);
+                            if ( $result->num_rows > 0 ) 
+                            {
+                                while ( $row = $result->fetch_object() ) 
+                                {
+                                    echo "<li><a href='tag_view.php?tag_id= {$row->tag_id}'> <i class='fa fa-angle-right'></i> {$row->tag_name} </a></li>";
+                                }
+                            } 
+                            else 
+                            {
+                                echo 'There are no results to display.';
+                            }
+                            $sql->close();
+                        ?>
                         </ul>
                     </div>
 
@@ -252,7 +203,7 @@
                         <h3>Latest Blog Post</h3>
                         <div class="media">
                             <a class="pull-left" href="javascript:;">
-                                <img class=" " src="img/blog/blog-thumb-1.jpg" alt="">
+                                <img class=" " src="../img/blog/blog-thumb-1.jpg" alt="">
                             </a>
                             <div class="media-body">
                                 <h5 class="media-heading"><a href="javascript:;">02 May 2013 </a></h5>
@@ -263,7 +214,7 @@
                         </div>
                         <div class="media">
                             <a class="pull-left" href="javascript:;">
-                                <img class=" " src="img/blog/blog-thumb-2.jpg" alt="">
+                                <img class=" " src="../img/blog/blog-thumb-2.jpg" alt="">
                             </a>
                             <div class="media-body">
                                 <h5 class="media-heading"><a href="javascript:;">02 May 2013 </a></h5>
@@ -274,7 +225,7 @@
                         </div>
                         <div class="media">
                             <a class="pull-left" href="javascript:;">
-                                <img class=" " src="img/blog/blog-thumb-3.jpg" alt="">
+                                <img class=" " src="../img/blog/blog-thumb-3.jpg" alt="">
                             </a>
                             <div class="media-body">
                                 <h5 class="media-heading"><a href="javascript:;">02 May 2013 </a></h5>
@@ -293,7 +244,7 @@
                   <?php
 
 
-                    include 'db-connect.php';
+                    include '../db-connect.php';
                     $post_id = $_GET['post_id'];
                     $related_tag_id = '0';
                     $query= mysqli_query($con,"select t.tag_id,t.tag_name from article_tag_map tm join article p on p.post_id = tm.post_id join article_tag t on t.tag_id = tm.tag_id where p.post_id = '$post_id'");
@@ -335,23 +286,23 @@
 
      <!--footer start-->
      <?php
-         include 'footer.php'
+         include '../footer.php'
          ?>
      <!--footer end-->
 
   <!-- js placed at the end of the document so the pages load faster -->
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/hover-dropdown.js"></script>
-    <script defer src="js/jquery.flexslider.js"></script>
-    <script type="text/javascript" src="assets/bxslider/jquery.bxslider.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/hover-dropdown.js"></script>
+    <script defer src="../js/jquery.flexslider.js"></script>
+    <script type="text/javascript" src="../assets/bxslider/jquery.bxslider.js"></script>
 
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/link-hover.js"></script>
+    <script src="../js/jquery.easing.min.js"></script>
+    <script src="../js/link-hover.js"></script>
 
 
      <!--common script for all pages-->
-    <script src="js/common-scripts.js"></script>
+    <script src="../js/common-scripts.js"></script>
 
 
   <script>
