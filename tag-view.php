@@ -1,566 +1,312 @@
-
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <title>Bass Desio</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; iso-8859-1"/>
+    <meta name="ROBOTS" content="INDEX, FOLLOW"/>
+    <meta name="description" content="Bass PRIS Blog, get notified the recent updates and amendments in the compliances"/>
+    <meta name="keywords" content="payroll services, payroll consultants, pris, payroll and recruitment information system, payroll processing"/>
+    <meta name="author" content="Bass PRIS"/>
+    <meta name="publisher" content="Bass Desio"/>
+    <meta name="copyright" content="Bass PRIS"/>
+    <meta http-equiv="Reply-to" content="antony@basspris.com"/>
+    <meta name="creation_Date" content="12/06/2011"/>
+    <meta name="expires" content="11 June 2222"/>
+    <meta name="language" content="EN"/>
+    <meta name="rating" content="general"/>
+    <meta name="revisit-after" content="7 days"/>
 
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <title>Bass PRIS Blog, get notified the recent updates and amendments in the compliances</title>
 
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/font-awesome.css">
-        <link rel="stylesheet" href="css/animate.css">
-        <link rel="stylesheet" href="css/templatemo_misc.css">
-        <link rel="stylesheet" href="css/templatemo_style.css">
-
-        <script src="js/vendor/modernizr-2.6.1-respond-1.1.0.min.js"></script>
-    </head>
-
-
-
-    <body>
-
-
-    <!--[if lt IE 7]>
-    <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-    <![endif]-->
-         <div class="site-main" id="sTop">
-            <div class="main-bd">
-                    <div class="container">
-                        <div id="menu-wrapper">
-                            <div class="row">
-
-                       <?php
-                            include'header.php';
-                            ?>
-
-                    </div> <!-- /.container -->
-                </div> <!-- /.main-header -->
-            </div> <!--/.site-main -->
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/theme.css" rel="stylesheet">
+    <link href="../css/bootstrap-reset.css" rel="stylesheet">
+    <!--external css-->
+    <link href="../assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/flexslider.css"/>
+    <link href="../assets/bxslider/jquery.bxslider.css" rel="stylesheet" />
 
 
+      <!-- Custom styles for this template -->
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/style-responsive.css" rel="stylesheet" />
 
-         <div class="content-section" id="blog">
+  </head>
+
+  <body>
+     <!--header start-->
+   <header class="header-frontend">
+        <div class="navbar navbar-default navbar-static-top">
             <div class="container">
-                <div class="row">
-                    <div class="heading-section col-md-12 text-center">
-                        <h2>Blog</h2>
-                        <p></p>
-                    </div> <!-- /.heading-section -->
-                </div> <!-- /.row -->
-                <div class="row">
-                     <div class="blog-member col-md-3 col-sm-6">
-                        <div class="member-thumb">
-        </div> <!-- /.member-thumb -->
-                    </div> <!-- /.blog-member -->
-            </div> <!-- /.container -->
-        </div> <!-- /#blog-->
-    <!--
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="fa fa-bar"></span>
+                        <span class="fa fa-bar"></span>
+                        <span class="fa fa-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../index.php">Bass<span>Pris</span></a>
+                </div>
+                <div class="navbar-collapse collapse ">
+                    <ul class="nav navbar-nav">
+                        <li><a href="../index.php">Home</a></li>
+                        <li><a href="../about-us.php">About</a></li>
+                        <li><a href="../services.php">Services</a></li>
+                        <li><a href="../tutorials.php">Tutorials</a></li>
+                        <li><a href="../pricing.php">Pricing</a></li>
+                        <li class="active"><a href="index.php">Blog</a></li>
+                        <li><a href="../contact-us.php">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--header end-->
 
-    Envor site content start
-
-    //-->
-    <div class="envor-content">
-      <!--
-
-      Page Title start
-
-      //-->
-
-      <!--
-
-      Page Title end
-
-      //-->
-      </section>
-
-      <!--
-
-      Main Content start
-
-      //-->
-      <section class="envor-section">
+    <!--breadcrumbs start-->
+    <div class="breadcrumbs">
         <div class="container">
-          <div class="row">
-            <div class="col-lg-9 col-md-9">
-              <div id="resultsDiv"></div><br><br>
-             <?php
+            <div class="row">
+                <div class="col-lg-4 col-sm-4">
+                    <h1>Blog</h1>
+                </div>
+                <div class="col-lg-8 col-sm-8">
+                    <ol class="breadcrumb pull-right">
+                        <li><a href="../index.php">Home</a></li>
+                        <li class="active">Blog</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--breadcrumbs end-->
 
-                  require 'blog_function.php';
+    <!--container start-->
+    <div class="container">
+        <div class="row">
+            <!--blog start-->
+            <div class="col-lg-9 ">
+                <?php
+                  require 'blog-function.php';
+                  require ('../db-connect.php');
+                  $tag_name = $_GET['tag_name'];
+                  $num_rec_per_page=5;
+                  if (isset($_GET["page"])) 
+                    { 
+                        $page  = $_GET["page"]; 
+                    } 
+                    else 
+                    { 
+                        $page=1; 
+                    } 
+                  $start_from = ($page-1) * $num_rec_per_page; 
+
+                  echo "Posts under <strong>".$tag_name."</strong> category";
+
                   $tag_id = $_GET['tag_id'];
-                  $query= "select tag_name from article_tag where tag_id=$tag_id ";
-
-                  $tags = get_tags($query);
-                     foreach($tags as $tag)
-                      {
-
-              ?>
-
-              <p class="blog-cat">Posts under <strong>"<?php echo $tag['tag_name'];?>"</strong> category</p>
-
-              <?php
-                }
-              ?>
-
-              <div id="envor-posts-masonry">
-              <!--
-
-              Post start
-
-              //-->
-               <?php
-
-
-                  $tag_id = $_GET['tag_id'];
-
-
-
-
                   $query= "select post_id from article_tag_map where tag_id=$tag_id ";
 
-                  $posts = get_posts($query);
+                  $posts = get_posts($query); 
                      foreach($posts as $post)
                       {
                         $id = $post['post_id'];
 
+                        $query = "Select * FROM article where post_id = $id ORDER BY post_date DESC LIMIT $start_from, $num_rec_per_page";
+                        $posts = get_posts($query);
+                        foreach($posts as $post)
+                        {
+                ?>
+                <div class="blog-item">
+                    <div class="row">
+                        <div class="col-lg-2 col-sm-2">
+                            <div class="date-wrap">
+                                <span class="date">
+                                  <?php 
+                                    $timestamp = $post['post_date'];
+                                    echo $data = date('d',strtotime($timestamp)); 
+                                  ?>
+                                </span>
+                                <span class="month">
+                                  <?php
+                                    $timestamp = $post['post_date'];
+                                    echo $data = date('F',strtotime($timestamp)); 
+                                  ?>
+                                </span>
+                            </div>
+                            <div class="comnt-wrap">
+                                <span class="comnt-ico">
+                                    <i class="fa fa-comments"></i>
+                                </span>
+                                <span class="value">15</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-10 col-sm-10">
+                            <div class="blog-img">
+                                <img src="blog-images/img1.jpg" alt="blog-post-image"/>
+                            </div>
 
-
-                $query = "Select * FROM article where post_id = $id ORDER BY post_date DESC ";
-
-
-
-                $posts = get_posts($query);
-
-
-                foreach($posts as $post)
-                {
-
-              ?>
-              <article class="envor-post envor-post-masonry">
-                <div class="inner">
-               <header>
-                  <h3><i class="fa fa-pencil"></i> <a href="blog_single_view.php?post_id=<?php echo $post['post_id']; ?>"><?php echo $post['post_title']; ?></a></h3>
-                  <p>posted on <a href="">
-
-                    <?php
-                    $timestamp = $post['post_date'];
-
-                    echo $data = date('d-m-Y',strtotime($timestamp)); ?></a> <br> by <a href=""><?php echo $post['author']; ?></a></p>
-                </header>
-                <p><?php $content=$post['post_content'];
-                      // strip tags to avoid breaking any html
-                        $string = strip_tags($content);
-
-                      if (strlen($string) > 500) {
-
-                          // truncate string
-                          $stringCut = substr($string, 0, 500);
-
-                          // make sure it ends in a word so assassinate doesn't become ass...
-                          $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'....';
-                      }
-                      echo $string;
-                ?></p>
-                <p><a href="blog_single_view.php?post_id=<?php echo $post['post_id']; ?>" class="envor-btn envor-btn-small envor-btn-secondary-border">read the rest <i class="fa fa-arrow-circle-right"></i></a></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-2 col-sm-2 text-right">
+                            <div class="author">
+                                By <a href="#"><?php echo $post['author']; ?></a>
+                            </div>
+                            <div class="shate-view">
+                                <ul class="list-unstyled">
+                                    <li><a href="javascript:;">209 View</a></li>
+                                    <li><a href="javascript:;">23 Share</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-10 col-sm-10">
+                            <h1><a href="blog-detail.php?post_id=<?php echo $post['post_id']; ?>"><?php echo $post['post_title']; ?></a></h1>
+                            <p>
+                              <?php 
+                                  $content=$post['post_content'];
+                                  // strip tags to avoid breaking any html
+                                  $string = strip_tags($content);
+                                  if (strlen($string) > 500) 
+                                  {
+                                    // truncate string
+                                    $stringCut = substr($string, 0, 500);
+                                    // make sure it ends in a word so assassinate doesn't become ass...
+                                    $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'....';
+                                  }
+                                  echo $string;
+                              ?>
+                            </p>
+                            <a href="blog-detail.php?post_id=<?php echo $post['post_id']; ?>"  class="btn btn-danger">Continue Reading</a>
+                        </div>
+                    </div>
                 </div>
-              <!--
+                
+                <?php
+                    }
+                  }
+                ?>
+                
+                <div class="text-center">
+                    <ul class="pagination">
+                    <?php 
+                        require('../db-connect.php');
+                        $query = "Select * FROM article where post_id = $id"; 
+                        $result = $sql->query($query); //run the query
+                        $total_records = $result->num_rows;  //count number of records
+                        $total_pages = ceil($total_records / $num_rec_per_page); 
 
-              Post end
+                        echo "<li><a href='categories/page-1'>".'«'."</a></li>"; // Goto 1st page  
 
-              //-->
-
-              </article>
-
-              <?php
-            }
-          }
-
-            ?>
-
-              </div>
+                        for ($i=1; $i<=$total_pages; $i++) { 
+                                    echo "<li><a href='categories/page-".$i."'>".$i."</a></li>"; 
+                        }
+                        echo "<li><a href='categories/page-$total_pages'>".'»'."</a></li>"; // Goto last page
+                    ?>   
+                    </ul>
+                </div>
 
             </div>
-            <!--
 
-            Right Sidebar start
-
-            //-->
-            <div class="col-lg-3 col-md-3">
-              <!--
-
-              Search Widget
-
-              //-->
-              <aside class="envor-widget envor-search-widget">
-                <h3><strong>Search</strong> Widget</h3>
-                <div class="envor-widget-inner">
-                  <form id="searchForm" method="post">
-                    <input type="text" id="s" name="s" placeholder="type to search...">
-                  </form>
-                </div>
-              </aside>
-            <!--
-
-            Categories Widget
-
-            //-->
-           <aside class="envor-widget envor-category-widget">
-              <h3>browse <strong>Categories</strong></h3>
-              <div class="envor-widget-inner">
-                <ul>
-                  <?php
-
-                    $query= "select * from article_tag";
-
-                    $posts = get_tags($query);
-
-
-                     foreach($posts as $post)
-                      {
-                  ?>
-
-                  <li>
-                    <p><a href="tag_view.php?tag_id=<?php echo $post['tag_id']; ?>"><i class="fa fa-folder-open"></i> <?php echo $post['tag_name']; ?></a> <a href="tag_view.php?tag_id=<?php echo $post['tag_id']; ?>">
-                      <i class="fa fa-rss"></i></a>
-
-
-
-                    </p>
-
-                  </li>
-                <?php
-                  }
-                  ?>
-
-                </ul>
-              </div>
-            </aside>
-            <!--
-
-            Tabs Widget
-
-            //-->
-            <aside class="envor-widget envor-search-widget">
-              <h3>Blog <strong>Posts</strong></h3>
-              <div class="envor-widget-inner">
-                <div class="envor-tabs">
-                  <header>
-                    <span><i class="fa fa-calendar"></i></span>
-                    <span><i class="fa fa-star"></i></span>
-                    <span><i class="fa fa-comment"></i></span>
-                  </header>
-                                    <article>
-                    <!--
-
-                    Sidebar Post Item
-
-                    //-->
-                    <div class="envor-sidebar-comment">
-                      <?php
-                        $query = "SELECT * from article ORDER BY post_date DESC;";
-                        $result = $sql->query($query);
-                        if($result && $result->num_rows > 0)
-                        {
-                            // An array to store the data in a more managable order.
-
-                                $data = array();
-
-                            // Add each entry to the $data array, sorted by Year and Month
-                            while($row = $result->fetch_assoc())
+            <div class="col-lg-3">
+                <div class="blog-side-item">
+                    <div class="search-row">
+                        <input type="text" class="form-control" placeholder="Search here">
+                    </div>
+                    <div class="category">
+                        <h3>Categories</h3>
+                        <ul class="list-unstyled">
+                        <?php
+                            $query= "select * from article_tag";
+                            $result = $sql->query($query);
+                            if ( $result->num_rows > 0 ) 
                             {
-                                $year = date('Y', strtotime($row['post_date']));
-                                $month = date('M', strtotime($row['post_date']));
-                                $data[$year][$month][] = $row;
-                            }
-
-                            // Go through each Year and Month and print a list of entries, sorted by month.
-                            foreach($data as $_year => $_months)
-                            {
-                                echo '<div><ul class="treeview"><li>';
-                                echo "<h4><strong>{$_year}</strong></h4>";
-                                foreach($_months as $_month => $_entries)
+                                while ( $row = $result->fetch_object() ) 
                                 {
-                                    echo '<ul class="expand"><li>';
-                                    echo "<h5><i class='fa fa-chevron-right'></i>&nbsp;&nbsp;<strong>{$_month}</strong></h5>";
-                                    echo "<ul>";
-                                    foreach($_entries as $_entry)
-                                    {
-                                        echo "<li>";
-                                        echo "<i class='fa fa-angle-double-right'></i>&nbsp;&nbsp;<a href=\"blog_single_view.php?post_id={$_entry['post_id']}\">";
-                                                    $content=$_entry['post_title'];
-                                                  // strip tags to avoid breaking any html
-                                                    $string = strip_tags($content);
-
-                                                  if (strlen($string) > 100) {
-
-                                                      // truncate string
-                                                      $stringCut = substr($string, 0, 100);
-
-                                                      // make sure it ends in a word so assassinate doesn't become ass...
-                                                      $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'....';
-                                                  }
-                                                  echo $string."</a>";
-                                        echo "</li>";
-                                    }
-                                    echo "</ul></li></ul>";
+                                    echo "<li><a href='tag_view.php?tag_id={$row->tag_id}'> <i class='fa fa-angle-right'></i> {$row->tag_name} </a></li>";
                                 }
-                                echo "</li></ul></div>";
+                            } 
+                            else 
+                            {
+                                echo 'There are no results to display.';
                             }
-                        }
-                            $result->free();
+                            $sql->close();
+                        ?>
+                        </ul>
+                    </div>
 
+                    <div class="blog-post">
+                        <h3>Latest Blog Post</h3>
+                        <?php
+                            require('../db-connect.php');
+                            $query = "Select * FROM article ORDER BY post_date DESC LIMIT 5";
+                            $result = $sql->query($query);
+                            if ( $result->num_rows > 0 ) 
+                            {
+                                while ( $row = $result->fetch_object() ) 
+                                {
+                        ?>
 
-                        /* and close up */
-                        $sql->close();
-
-                      ?>
-
-
+                        <div class="media">
+                            <div class="media-body">
+                                <h5 class="media-heading"><a href='blog-detail.php?post_id=<?php echo "{$row->post_id}"; ?>'><?php echo "{$row->post_title}"; ?></a></h5>
+                                <p>
+                                </p>
+                            </div>
+                        </div>
+                        <?php
+                                }
+                            } 
+                            else 
+                            {
+                                echo 'There are no results to display.';
+                            }
+                            $sql->close();
+                        ?>                    
 
                     </div>
 
-
-                  </article>
-                  <article>
-                    <!--
-
-                    Sidebar Comment Item
-
-                    //-->
-
-                      <?php
-                      require '../db_connect.php';
-                      $query= " select * from article ORDER BY post_date DESC limit 3;";
-                      $result = $sql->query($query);
-                      if($result->num_rows > 0)
-                        {
-                          while ( $row = $result->fetch_assoc() )
-                          {
-                      ?>
-                      <div class="envor-sidebar-comment">
-                      <p><a href="blog_single_view.php?post_id=<?php echo $row['post_id']; ?>"><?php $content=$row['post_title'];
-                      // strip tags to avoid breaking any html
-                       $string = strip_tags($content);
-
-                        if (strlen($string) > 35) {
-
-                          // truncate string
-                          $stringCut = substr($string, 0, 35);
-
-                          // make sure it ends in a word so assassinate doesn't become ass...
-                          $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'....';
-                        }
-                        echo $string;
-                      ?></a></p>
-                      <p><?php $content=$row['post_content'];
-                      // strip tags to avoid breaking any html
-                        $string = strip_tags($content);
-
-                        if (strlen($string) > 100) {
-
-                          // truncate string
-                          $stringCut = substr($string, 0, 100);
-
-                          // make sure it ends in a word so assassinate doesn't become ass...
-                          $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'....';
-                        }
-                        echo $string;
-                      ?></p></div>
-
-                  <?php
-                        }
-                      }
-                      else
-                      {
-                            echo "No Data Found!";
-                      }
-                  ?>
-
-                  </article>
-                  <article>
-                    <!--
-
-                    Sidebar Comment Item
-
-                    //-->
-
-                      <?php
-                      require '../db_connect.php';
-                      $query= "  select * from questions where ans_rply = '1' ORDER BY qus_date DESC limit 3;";
-                      $result = $sql->query($query);
-                      if($result->num_rows > 0)
-                        {
-                          while ( $row = $result->fetch_assoc() )
-                          {
-                      ?>
-                      <div class="envor-sidebar-comment">
-                      <p><a href="../expert_single_view.php?qus_id=<?php echo $row['qus_id']; ?>"><?php $content=$row['question'];
-                      // strip tags to avoid breaking any html
-                        $string = strip_tags($content);
-
-                      if (strlen($string) > 35) {
-
-                          // truncate string
-                          $stringCut = substr($string, 0, 35);
-
-                          // make sure it ends in a word so assassinate doesn't become ass...
-                          $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'....';
-                      }
-                      echo $string;
-                      ?></a></p>
-                      <p><?php $content=$row['answer'];
-                      // strip tags to avoid breaking any html
-                        $string = strip_tags($content);
-
-                      if (strlen($string) > 100) {
-
-                          // truncate string
-                          $stringCut = substr($string, 0, 100);
-
-                          // make sure it ends in a word so assassinate doesn't become ass...
-                          $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'....';
-                      }
-                      echo $string;
-                      ?></p></div>
-
-                  <?php
-                        }
-                      }
-                      else
-                      {
-                            echo "No Data Found!";
-                      }
-                  ?>
-
-                  </article>
+                    <div class="tags">
+                        <h3>Tags</h3>
+                        <ul class="list-unstyled tag">
+                        <?php
+                            include '../db-connect.php';
+                            $post_id = $_GET['post_id'];
+                            $related_tag_id = '0';
+                            $query= mysqli_query($con,"select t.tag_id,t.tag_name from article_tag_map tm join article p on p.post_id = tm.post_id join article_tag t on t.tag_id = tm.tag_id");
+                            while($que = mysqli_fetch_row($query))
+                            {
+                        ?>
+                        <li><a href="tag-view.php?tag_id=<?php echo $que['0']; ?>"><?php $related_tag_id = $que['0']; echo ucfirst($que['1']); ?></a></li>
+                        <?php
+                            }
+                        ?>
+                        </ul>
                 </div>
-              </div>
-            </aside>
-
-            <!--
-
-            Right Sidebar end
-
-            //-->
             </div>
-          </div>
+
+            <!--blog end-->
         </div>
-      <!--
 
-      Main Content start
-
-      //-->
-      </section>
-    <!--
-
-    Envor site content end
-
-    //-->
     </div>
+    <!--container end-->
 
+     <!--footer start-->
+       <?php
+        include '../footer.php'
+       ?>
+     <!--footer end-->
 
-    <script src="../js/jquery.rivathemes.js"></script>
-    <script type="text/javascript">
-      $('document').ready(function() {
-          var $container = $('#envor-posts-masonry');
-          // initialize Masonry after all images have loaded
-              $container.masonry({
-                'itemSelector': '.envor-post-masonry'
-              });
-          $(window).resize(function() {
-            $container.masonry('bindResize');
-          });
-          /*
+  <!-- js placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/hover-dropdown.js"></script>
+    <script defer src="../js/jquery.flexslider.js"></script>
+    <script type="text/javascript" src="../assets/bxslider/jquery.bxslider.js"></script>
+    <script src="../js/jquery.easing.min.js"></script>
+    <script src="../js/link-hover.js"></script>
 
-          Footer News Slider
-
-          */
-
-      });
-    </script>
-
-   <!-- Script for Tree View Blog -->
-
-
-    <script>
-        $(document).ready(function (e) {
-
-          $(".treeview li ul").addClass("collapse");
-
-            $(".treeview li").click(function (e) {
-                currentselect = $(this).closest(".treeview").attr("id");
-                $(this).closest(".treeview").find("li").removeClass("selected");
-
-                var selectnode = $(this);
-                expan(selectnode, e);
-            });
-        });
-        function expan(node, e) {
-            if (node.children("ul").is(":hidden")) {
-                if (e.type == "click")
-                    node.children("ul").slideDown("slow")//removeClass("collapse");
-            }
-            else {
-                if (e.type == "click")
-                    node.children("ul").slideUp("slow");
-            }
-            e.stopPropagation();
-        }
-    </script>
-
-    <!-- End of Script for Tree View Blog -->
-
-    <script src="../js/envor.js"></script>
-    <script type="text/javascript">
-      $('document').ready(function() {
-          /*
-
-          Preload Images
-
-          */
-          var imgs = new Array(), $imgs = $('img');
-          for (var i = 0; i < $imgs.length; i++) {
-            imgs[i] = new Image();
-            imgs[i].src = $imgs.eq(i).attr('src');
-          }
-          Core.preloader.queue(imgs).preload(function() {
-            var images = $('a').map(function() {
-                    return $(this).attr('href');
-            }).get();
-            Core.preloader.queue(images).preload(function() {
-                  $.preloadCssImages();
-            })
-          })
-          $('#envor-preload').hide();
-      });
-      /*
-
-      Google Analytics Code
-
-      */
-      var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-      g.src='//www.google-analytics.com/ga.js';
-      s.parentNode.insertBefore(g,s)}(document,'script'));
-      /*
-
-      Windows Phone 8 и Internet Explorer 10
-
-      */
-      if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
-        var msViewportStyle = document.createElement("style")
-        msViewportStyle.appendChild(
-          document.createTextNode(
-            "@-ms-viewport{width:auto!important}"
-          )
-        )
-        document.getElementsByTagName("head")[0].appendChild(msViewportStyle)
-      }
-    </script>
+     <!--common script for all pages-->
+    <script src="../js/common-scripts.js"></script>
   </body>
 </html>
