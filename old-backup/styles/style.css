@@ -1,0 +1,204 @@
+
+html {width:100%; height:100%;}
+
+body {
+	color:#F0F0F0;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	width:100%;
+	line-height:18px;
+	overflow:auto;
+	color:#000;
+	margin:0;
+	padding:0;
+}
+#mainOuter {
+	width:100%;
+	height:auto;
+	border:0px solid #CCC;
+	background-color:#FFFFFF;
+	color:#000;
+	overflow:auto;
+}
+#outerDiv{
+	height:auto;
+	width:990px;
+	margin-left:auto;
+	margin-right:auto;
+	padding:0px;
+	border:1px solid #CCC;
+	overflow:hidden;
+}
+#ContentOuter
+{
+	padding: 7px 14px;
+	margin:18px 10px 10px 0px;
+	background-color: #fbfbfb;
+	background-image: -moz-linear-gradient(top, #ffffff, #f5f5f5);
+	background-image: -ms-linear-gradient(top, #ffffff, #f5f5f5);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f5f5f5));
+	background-image: -webkit-linear-gradient(top, #ffffff, #f5f5f5);
+	background-image: -o-linear-gradient(top, #ffffff, #f5f5f5);
+	background-image: linear-gradient(top, #ffffff, #f5f5f5);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f5f5f5', GradientType=0);
+	border: 1px solid #ddd;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: inset 0 1px 0 #ffffff;
+	-moz-box-shadow: inset 0 1px 0 #ffffff;
+	box-shadow: inset 0 1px 0 #ffffff;
+	float:left;
+	width:800px;
+	height:auto;
+}
+.navigation{
+	font-size:0.75em; width:150px;
+}
+.navigation ul {margin:0; padding:0;}
+.navigation li {list-style: none;}
+ul.top-level {background:#999;}
+ul.top-level li {
+ border-bottom: #fff solid;
+ border-top: #fff solid;
+ border-width: 1px;
+}
+
+.navigation a {
+ color: #fff;
+ cursor: pointer;
+ display:block;
+ height:25px;
+ line-height: 25px;
+ text-indent: 10px;                   
+ text-decoration:none;
+ width:100%;
+}
+.navigation a:hover{
+ text-decoration:underline;
+}
+.navigation li:hover {
+ background: #f90;
+ position: relative;
+}
+#ArticleTitle {
+	
+	font-family:"bebas_neueregular";
+	font-size:25px;
+	font-weight:bold;
+	color:#5EB9C4;
+	line-height:35px;
+	font-stretch:expanded;
+	letter-spacing:2px;
+	text-align:justify;
+}
+#ArticleAuthor {
+	font-family:"BreeSerif_Reg";
+	font-size:14px;
+	font-weight:bold;
+	line-height:30px;
+	font-stretch:expanded;
+	float:right;
+	text-transform:uppercase; padding-right:15px;
+}
+
+.clsrow{
+ width:726px; height:auto; overflow:hidden; float:left; border:solid 0px #CCC;
+ }
+ .clstab_row{
+ width:505px; height:auto; overflow:hidden; float:left; border:solid 0px #CCC;
+ }
+ .clm1{border:0px solid #000000; width:160px; float:left; overflow:hidden; line-height:25px; padding-top:15px; text-align:left; text-indent:5px; font: bold 13px Verdana; text-transform:uppercase; height:auto; margin-left:15px;
+ }
+ .clm2{border:0px solid #000000; width:20px; height:auto; float:left; overflow:hidden; padding-top:15px; font: bold 13px Verdana;
+ }
+ .clm3{border:0px solid #000000; width:520px; height:auto; float:left; overflow:hidden; text-align:left; padding-top:15px; font-family:"Verdana", Arial, Helvetica, sans-serif; text-indent:15px;
+ }
+  .clm4{border:0px solid #000000; width:510px; height:auto; float:left; overflow:hidden; text-align:justify; padding-top:15px; font-family:"Verdana", Arial, Helvetica, sans-serif; padding-left:15px;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@font-face {
+    font-family: 'bebas_neueregular';
+    src: url('bebasneue-webfont.eot');
+    src: url('bebasneue-webfont.eot?#iefix') format('embedded-opentype'),
+         url('bebasneue-webfont.woff') format('woff'),
+         url('bebasneue-webfont.ttf') format('truetype'),
+         url('bebasneue-webfont.svg#bebas_neueregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+	}
+	
+@font-face {
+    font-family: 'proxima_nova_rgbold';
+    src: url('proximanova-bold-webfont.eot');
+    src: url('proximanova-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('proximanova-bold-webfont.woff') format('woff'),
+         url('proximanova-bold-webfont.ttf') format('truetype'),
+         url('proximanova-bold-webfont.svg#proxima_nova_rgbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+@font-face {
+    font-family: 'proxima_nova_ltregular';
+    src: url('proximanova-light-webfont.eot');
+    src: url('proximanova-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('proximanova-light-webfont.woff') format('woff'),
+         url('proximanova-light-webfont.ttf') format('truetype'),
+         url('proximanova-light-webfont.svg#proxima_nova_ltregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+@font-face {
+    font-family: 'proxima_nova_rgregular';
+    src: url('proximanova-regular-webfont.eot');
+    src: url('proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('proximanova-regular-webfont.woff') format('woff'),
+         url('proximanova-regular-webfont.ttf') format('truetype'),
+         url('proximanova-regular-webfont.svg#proxima_nova_rgregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+	}
+	
+@font-face {
+    font-family: 'swis721_bdrnd_btbold';
+    src: url('swiss_721_bold_rounded_bt_0-webfont.eot');
+    src: url('swiss_721_bold_rounded_bt_0-webfont.eot?#iefix') format('embedded-opentype'),
+         url('swiss_721_bold_rounded_bt_0-webfont.woff') format('woff'),
+         url('swiss_721_bold_rounded_bt_0-webfont.ttf') format('truetype'),
+         url('swiss_721_bold_rounded_bt_0-webfont.svg#swis721_bdrnd_btbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+	}
+@font-face {
+    font-family: 'BreeSerif_Reg';
+    src: url('BreeSerif_Reg.eot');
+    src: url('BreeSerif_Reg.eot?#iefix') format('embedded-opentype'),
+         url('BreeSerif_Reg.woff') format('woff'),
+         url('BreeSerif_Reg.ttf') format('truetype'),
+         url('BreeSerif_Reg.svg#swis721_bdrnd_btbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+	}

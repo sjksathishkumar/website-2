@@ -5,21 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html; iso-8859-1"/>
     <meta name="ROBOTS" content="INDEX, FOLLOW"/>
-    <meta name="description" content="Bass PRIS Tutorials is a self manual for new subscribers and users"/>
-    <meta name="keywords" content="payroll services, payroll consultants, pris, payroll and recruitment information system, payroll processing"/>
-    <meta name="author" content="Bass PRIS"/>
-    <meta name="publisher" content="Bass Desio"/>
-    <meta name="copyright" content="Bass PRIS"/>
-    <meta http-equiv="Reply-to" content="antony@basspris.com"/>
-    <meta name="creation_Date" content="12/06/2011"/>
-    <meta name="expires" content="11 June 2222"/>
-    <meta name="language" content="EN"/>
-    <meta name="rating" content="general"/>
-    <meta name="revisit-after" content="7 days"/>
-
+	<meta name="description" content="Bass PRIS Tutorials is a self manual for new subscribers and users"/>
+	<meta name="keywords" content="payroll services, payroll consultants, pris, payroll and recruitment information system, payroll processing"/>
+	<meta name="author" content="Bass PRIS"/>
+	<meta name="publisher" content="Bass Desio"/>
+	<meta name="copyright" content="Bass PRIS"/>
+	<meta http-equiv="Reply-to" content="antony@basspris.com"/>
+	<meta name="creation_Date" content="12/06/2011"/>
+	<meta name="expires" content="11 June 2222"/>
+	<meta name="language" content="EN"/>
+	<meta name="rating" content="general"/>
+	<meta name="revisit-after" content="7 days"/>
 
     <title>Bass PRIS Tutorials will be self manual for new subscribers</title>
-
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -36,11 +34,6 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/style-responsive.css" rel="stylesheet" />
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
-    <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
-    <![endif]-->
   </head>
 
   <body>
@@ -70,7 +63,6 @@
             </div>
         </div>
     </header>
-
     <!--header end-->
 
      <!--breadcrumbs start-->
@@ -82,8 +74,7 @@
                  </div>
                  <div class="col-lg-8 col-sm-8">
                      <ol class="breadcrumb pull-right">
-                         <li><a href="#">Home</a></li>
-                         <li><a href="#">Pages</a></li>
+                         <li><a href="index.php">Home</a></li>
                          <li class="active">Tutorial</li>
                      </ol>
                  </div>

@@ -1,0 +1,602 @@
+<?php 
+//<--- * User * ---> 
+$count = count( $this->data );
+
+//<--- * Last Photos * --->
+$countPhotos = count( $this->lastPhotos );
+
+if( isset( $this->data ) &&  $count != 0 && $this->checkBlocked[0]['status'] != 1 ) :
+			
+//<-- Posts
+$countPost = count( $this->posts );
+
+//<<-- Favorites
+$countFavs = count( $this->postsFavs );
+
+//<<<-- Followers
+$countFollowers = count( $this->_getFollowers );
+
+//<<<-- Following
+$countFollowing = count( $this->_getFollowing );
+
+//<<<<- * USER BLOCK * --->>>
+//<<<-- Following
+$countBlock = count( $this->checkBlock );
+
+if( $countBlock == 1 && $this->checkBlock[0]['status'] == 1 )
+{
+	$user_bloqueado = 'Unlock user';
+}
+else 
+{
+	$user_bloqueado = 'Block user';
+}
+//<<<--- * Count Data * --->>>
+if( $_GET['action'] == 'favorites' )
+{
+	$countData = $countFavs;
+}
+else if( $_GET['action'] == 'followers' )
+{
+	$countData = $countFollowers;
+}
+else if( $_GET['action'] == 'following' )
+{
+	$countData = $countFollowing;
+}
+else 
+{
+	$countData = $countPost;
+}
+if( isset( $_GET['action'] ) )
+{
+	$actionUrl = '/'.$_GET['action'];
+}
+
+?>
+<?php include 'views/inc/header.php'; ?>
+<link rel="canonical" href="<?php echo URL_BASE.$this->info->username.$actionUrl ?>">
+<style>
+	
+	body
+	{
+		background-position: <?php echo $this->info->bg_position; ?> 65px;
+		background-attachment: <?php echo $this->info->bg_attachment; ?>;
+		
+		<?php if( $this->info->bg_attachment == 'fixed' ): ?>
+		background-repeat: repeat repeat; 
+		<?php else: ?>
+		background-repeat: no-repeat; 
+		<?php endif; ?>
+		
+		background-color: <?php echo $this->info->bg_color; ?>;
+		
+		<?php if( $this->info->bg != '' ): ?>
+		background-image: url(<?php echo URL_BASE.'public/backgrounds/'.$this->info->bg; ?>);
+		<?php endif; ?>
+	}
+	
+	body a,
+	body a:hover { color: <?php echo $this->info->color_link; ?>; }
+	.icons { background-color: <?php echo $this->info->color_link; ?>;}
+	.container_data_profile a:hover span{ color: <?php echo $this->info->color_link; ?>;  }
+	
+</style>
+<link href="<?php echo $_layoutParams['root_css']; ?>colorbox.css" rel="stylesheet" />
+</head>
+	<!-- Body -->
+	<body data-max="<?php echo MAX_LENGTH; ?>">
+		<!-- warpper_top_bar -->
+		<div class="warpper_top_bar">
+				<!-- inner_top_bar -->
+				<header class="inner_top_bar">
+					<!-- padding_class -->
+					<div class="padding_class">
+						<a href="<?php echo URL_BASE; ?>">
+							<?php include 'views/inc/logo.php'; ?>
+						</a>
+					
+					<?php include 'views/inc/navigation.php'; ?>
+			    </div><!-- padding_class -->
+			</header><!-- inner_top_bar -->
+		</div><!-- warpper_top_bar -->
+	
+	<!-- page -->
+	<div class="page">
+		<!-- layout -->
+		<section class="layout session">
+			<div class="popout"></div>
+			<!-- padding_class -->
+		    <div class="padding_class sessionClass">
+		    	
+		    	<div class="formSearchResp">
+						   <form action="search/" class="formResponsive" method="get" id="search_engine" accept-charset="UTF-8">
+							  <input id="btnItems" name="q" class="mention" type="text" placeholder="Search..." maxlength="100">	
+						      </form>
+					</div>
+					
+		    	<!-- cover_user -->
+		    	<div class="cover_user">
+		    		
+		    		<?php if( isset( $_SESSION['authenticated'] ) ): 
+		    			
+						if( $_SESSION['authenticated'] != $this->info->id && $this->checkBlock[0]['status'] == 0  ):
+							?>
+							
+							<?php if ( $this->followingActive->status == 1 ): ?>	
+		    		   		 <span data-username="<?php echo $this->info->username; ?>" data-id="<?php echo _Function::randomString( 10, FALSE, TRUE, FALSE ).'-'.$this->info->id; ?>" class="followBtn follow_button follow_active">Following</span>
+		    				<?php else: ?>
+		    				<span data-username="<?php echo $this->info->username; ?>" data-id="<?php echo _Function::randomString( 10, FALSE, TRUE, FALSE ).'-'.$this->info->id; ?>" class="followBtn follow_button">Follow</span>
+							<?php endif; //<--- $this->followingActive->status ?>
+						<?php endif; //<---  $_SESSION['authenticated'] != $this->info->id ?>
+		    		
+		    		<?php else: ?>
+		    		<span class="follow_button toogle">Follow</span>
+		    		<?php endif; //<---- $_SESSION['authenticated'] ?>
+		    		
+		    		
+		    		<?php if( $this->info->cover_image != '' ): ?>
+		    				<img src="<?php echo URL_BASE.'public/cover/'.$this->info->cover_image; ?>" class="img_cover" />
+		    			
+		    		<?php endif; ?>
+		    		
+		    		<?php if( isset( $_SESSION['authenticated'] ) ): ?>
+		    		
+		    		<?php if( $_SESSION['authenticated'] != $this->info->id ): ?>
+		    		<!--  SETTINGS USER -->
+		    		<div class="settings_user">
+		    			<div class="icoSettings">
+		    				<div id="boxSettings">
+		    					<i class="arrowUp"></i>
+		    				<ul class="options_toogle optionsUser options">
+		    					<li>
+		    						<a class="report_user_spam" data-id="<?php echo $this->info->id; ?>">Report user as spam</a>
+		    					</li>
+		    					<li>
+		    						<a class="block_user_id" data-id="<?php echo $this->info->id; ?>"><?php echo $user_bloqueado; ?></a>
+		    					</li>
+		    					<?php if( $this->followActive->status == 1 ): ?>
+		    					<li>
+		    						<a class="sendMessage" data-id="<?php echo $this->info->id; ?>" data-username="<?php echo $this->info->username; ?>">Send message private</a>
+		    					</li>
+		    						<?php endif; ?>
+		    				</ul>
+		    				</div><!-- BOX -->
+		    			</div><!-- icoSettings -->
+		    		</div>
+		    		<?php endif;//<--- USER NOW ?>
+		    		<?php
+				else: ?>
+				<!--  SETTINGS USER -->
+		    		<div class="settings_user">
+		    			<div class="icoSettings">
+		    				<div id="boxSettings">
+		    					<i class="arrowUp"></i>
+		    				<ul class="options_toogle optionsUser toogle">
+		    					<li>
+		    						<a>Report user as spam</a>
+		    					</li>
+		    					<li>
+		    						<a>Block user</a>
+		    					</li>
+		    					<li>
+		    						<a>Send message private</a>
+		    					</li>
+		    				</ul>
+		    				</div><!-- BOX -->
+		    			</div><!-- icoSettings -->
+		    		</div>
+				
+				<?php endif; ?>
+		    		
+		    		<?php if( $_SESSION['authenticated'] == $this->info->id ): ?>
+		    		<!--  SETTINGS USER -->
+		    		<div class="settings_user">
+		    			<div class="icoSettings">
+		    				<div id="boxSettings">
+		    					<i class="arrowUp"></i>
+		    				<ul class="options_toogle optionsUser options">
+		    					<li><a href="<?php echo URL_BASE; ?>profile/">Edit Profile</a></li>
+		    					<li><a href="<?php echo URL_BASE; ?>settings/">Settings</a></li>
+		    					<li><a href="<?php echo URL_BASE; ?>design/">Design</a></li>
+		    				</ul>
+		    				</div><!-- BOX -->
+		    			</div><!-- icoSettings -->
+		    		</div>
+		    		<?php endif;//<--- USER NOW ?>
+		    	</div><!-- cover_user -->
+		    	
+		    <!-- wrapper_grid -->
+		     <div class="wrapper_grid floatLeft">
+				   
+	<?php 
+				   
+if( $this->info->mode == 0 && $this->followingActive->status == 0 && $_SESSION['authenticated'] != $this->info->id ):
+		
+	else:
+	     if( $countPhotos != 0 ) : ?>
+				   <!-- Grid 1 -->
+				   <div class="grid_1">
+				   		<!-- container_grid -->
+				   		<div class="container_grid">
+				   			<span class="grid_title_small">Last photo(s) 
+				   				<a href="<?php echo URL_BASE.$this->info->username; ?>/media" class="floatRight">
+				   					View media &rarr;
+				   					</a>
+				   				</span>
+				   			<ul class="media_profile">
+				   				<?php 
+				   				foreach ( $this->lastPhotos as $key )
+				   				{
+				   					++$numero;
+									if( $numero % 3 )
+									{
+										$style = null;
+									}
+									
+									else
+									{
+										 $style = ' class="last"';
+									}
+									 ?>
+									   
+									   <li<?php echo $style; ?>>
+				   					<a class="media_galery" title="<?php echo $key['post_details']; ?>" href="<?php echo URL_BASE.'upload/'.$key['photo']; ?>">
+				   						<img src="<?php echo URL_BASE.'thumb_fixed/90-90-upload/'.$key['photo']; ?>" />
+				   						</a>
+				   						</li>
+									   <?php
+								   }//<--- FOREACH ?>
+				   				<!-- 1 -->
+				   						
+				   			</ul>
+				   			</a>
+				   		</div><!-- container_grid -->
+				   		
+				   </div><!-- Grid 1 Last Photos -->
+				   <?php endif;//<<<--- != 0 ?>
+			<?php endif;//<<<--- Private or Public ?>
+				   
+				   
+				<?php 
+				
+				//<---- * advertising * --->
+				   include 'views/inc/advertising.php';
+				   
+				   if( Session::get( 'authenticated' ) ) :
+					   //<---- * who_follow * --->
+				      include 'views/inc/who_to_follow.php';
+					   endif;
+				   
+				   //<---- * trending * --->
+				   include 'views/inc/trending.php'; 
+				    ?>
+				   
+				    <!-- Grid 1 -->
+				   <div class="grid_1">
+				   		<!-- container_grid -->
+				   		<div class="container_grid about_pages">
+				   			<?php include 'views/inc/footer_session.php'; ?>
+				   		</div><!-- container_grid -->
+				   </div><!-- Grid 1 -->
+				   
+			   </div><!-- wrapper_grid -->
+			   
+			   
+			   <!-- Grid 2 -->
+			   <div class="grid_2 floatRight">
+			   	
+			   	<!-- nav_profile -->
+		    	<div class="grid_profile">
+		    		<!-- container_profile -->
+				   		<div class="container_profile">
+				   				<img src="<?php echo URL_BASE.'public/avatar/'.$this->info->avatar; ?>"  class="avatar_large" />
+				   				
+				   			<!-- profile detail -->
+					   			<div class="profile_detail">
+					   				<span class="detail_top" >
+					   					<h1><?php echo stripslashes( $this->info->name ); ?></h1> 
+					   					
+					   					<?php if( $this->info->type_account == '1' ): ?>
+					   					<img title="Verified" class="verified_img" src="<?php echo URL_BASE; ?>public/img/verified.png"> 
+					   					<?php endif; ?>
+					   					
+					   					<strong>@<?php echo $this->info->username; ?></strong> 
+					   					<?php if( $this->followActive->status == 1 ): ?>
+					   					<span class="isFollow">FOLLOWS YOU</span>
+					   					<?php endif;?>
+					   				</span><!-- detail_top -->
+					   				
+					   				<ul class="user_data">
+					   					<li>
+					   						<span class="container_data_profile grid_first">
+					   							<a href="<?php echo URL_BASE.$this->info->username; ?>">
+					   							<span class="countData"><?php echo _Function::formatNumber( $countPost ); ?></span>
+					   							<span class="title_data">Post</span>
+					   							</a>
+					   						</span>
+					   					</li>
+					   					
+					   					<li>
+					   						<span class="container_data_profile">
+					   							<a href="<?php echo URL_BASE.$this->info->username.'/followers'; ?>">
+					   							<span class="countData"><?php echo _Function::formatNumber( $this->info->totalFollowers ); ?></span>
+					   							<span class="title_data">Followers</span>
+					   							</a>
+					   						</span>
+					   					</li>
+					   					
+					   					<li>
+					   						<span class="container_data_profile">
+					   							<a href="<?php echo URL_BASE.$this->info->username.'/following'; ?>">
+					   								<span class="countData"><?php echo _Function::formatNumber( $this->info->totalFollowing ); ?></span>
+				   									<span class="title_data">Following</span>
+					   							</a>
+					   							
+					   						</span>
+					   					</li>
+					   					
+					   					<li class="last_li">
+					   						<span class="container_data_profile">
+					   							<a href="<?php echo URL_BASE.$this->info->username.'/favorites'; ?>">
+					   							<span class="countData"><?php echo _Function::formatNumber( $countFavs ); ?></span>
+					   							<span class="title_data">Favorites</span>
+					   							</a>
+					   						</span>
+					   					</li>
+					   				</ul><!-- user_data -->
+					   			
+					   				
+					   			</div><!-- profile_detail -->
+					   			
+					   			<?php if( $this->info->bio != '' ) : 
+								
+					   				$styleP = ' style="margin: 0; border: none; padding: 0;"';
+									
+					   				?>
+					   				<p class="about_user">
+					   				 <?php echo _Function::CheckText( $this->info->bio ); ?>
+					   				</p>
+					   				<?php
+								else:
+									
+									$styleP = null;
+									
+					   				 endif; ?>
+					   				
+					   				<?php if( $this->info->location != '' || $this->info->website != '' ) : ?>
+					   					<?php 
+					   					
+					   					if( $this->info->location != '' && $this->info->website != '' ) : 
+											 $separator = ' - ';
+											endif;
+					   						?>
+					   				 <p class="about_user"<?php echo $styleP; ?>>
+					   				 <?php echo $this->info->location.$separator; ?> <?php echo _Function::linkText( $this->info->website ); ?>
+					   				</p>
+					   				<?php endif; ?>
+					   				
+				   			</div><!-- container_profile -->
+		    	</div><!-- nav_profile -->
+		    	
+		    	
+    <?php  if( Session::get( 'authenticated' ) && $_SESSION['authenticated'] == $this->info->id && empty( $_GET['action'] ) ) : ?>	   	
+		<h4 class="titleBar">What's new?</h4>
+			 <div id="grid_post">
+			   	<form action="<?php echo URL_BASE; ?>public/ajax/upload.php" method="post" accept-charset="UTF-8" id="form_add_post" enctype="multipart/form-data">
+				   <textarea name="add_post" class="post_add" id="add_post"></textarea>
+					  <button id="button_add" disabled="disabled" style="opacity: 0.5; cursor: default;" type="submit">Send</button>
+					    <input type="hidden" name="photoId" value="" id="photoId" />
+					    <div class="wrapper_media">
+					    		<input type="file" id="upload" class="upload" name="photo" accept="image/*" />
+								<div class="video_post" title="Add Video"></div>
+							</div><!-- wrapper_media -->
+							
+						<div data-max="140" id="counter"></div>
+						<input type="text" name="video_link" id="video_link" placeholder="Link Youtube or Vimeo" value="" />
+					</form><!-- form -->
+					
+					<!-- Wrapper Preview -->
+					<div id="wrapper_preview">
+						<div id="container_preview">
+						</div>
+					</div><!-- Wrapper Preview -->
+			 </div><!-- grid_post  -->
+			 <?php  endif; ?>	
+			 
+    			    <h4 class="titleBar"><?php echo $this->titleH4; ?></h4>
+    			    
+			   	<ul class="posts">
+			   		
+			   		<div id="container-loader">
+			   			<div class="loading-bar"></div>
+			   		</div>
+			   		
+			   	</ul><!-- UL POST -->
+			   	
+		</div><!-- Grid 2 -->
+			   		
+			 </div><!-- padding_class -->
+		</section><!-- layout -->
+	</div><!-- page -->
+
+		<div class="modal">
+		<div id="content_modal">
+		</div>
+	</div>
+	
+   
+   <script src="<?php echo $_layoutParams['root_js']; ?>jquery-1.7.1.min.js"></script>
+   <script src="<?php echo $_layoutParams['root_js']; ?>jquery.easing.1.3.js"></script>
+   <script src="<?php echo $_layoutParams['root_js']; ?>jquery.placeholder.1.1.1.min.js"></script>
+   <script src="<?php echo $_layoutParams['root_js']; ?>jquery-ui-1.8.17.custom.min.js"></script>
+   <script src="<?php echo $_layoutParams['root_js']; ?>functions.js"></script>
+   <script src="<?php echo $_layoutParams['root_js']; ?>count.js"></script>
+   <script src="<?php echo $_layoutParams['root_js']; ?>add.post.js"></script>
+   <script src="<?php echo $_layoutParams['root_js']; ?>jquery.form.js"></script>
+   <script src="<?php echo $_layoutParams['root_js']; ?>jqueryTimeago.js"></script>
+   <script src="<?php echo $_layoutParams['root_js']; ?>jquery.colorbox.js"></script>
+   <script src="<?php echo $_layoutParams['root_js']; ?>jquery.scroll.user.js"></script>
+   
+   
+   <?php if( !Session::get( 'authenticated' ) ) : ?>
+   <script src="<?php echo $_layoutParams['root_js']; ?>login.sign.up.js"></script>
+   <?php endif; ?>
+ 	
+ <script type="text/javascript">
+ 
+ $(".media_galery").colorbox({
+   	rel:'galery'
+   	});
+   	
+   	$(".galeryAjax").colorbox({
+   	});
+   
+    
+   $('.posts').scrollPagination({
+		nop     : 10, 
+		offset  : 0, 
+		error   : '',
+		delay   : 250, 
+		               
+		scroll  : true, 
+		query   : 0,
+		file    :'<?php echo $this->_file; ?>',
+		_userId : <?php echo $this->info->id; ?>,
+		totalGlobal :  <?php echo $countData; ?>
+	});
+	
+   jQuery(document).ready(function($) {
+   
+   $('#top').live('click',function()
+   {
+   	$('body,html').animate({ scrollTop: 0
+	}, 800);
+   });
+	
+	//=== PLACEHOLDER	
+  $(function(){
+      $(':input[placeholder]').placeholder();
+    });
+   //====== TIME AGO
+	
+<?php if( Session::get( 'authenticated' ) ) : ?>
+  
+		
+		$('#reply_post').live('hover', function(){
+		if ($(this).data('hascharcount') == undefined) {
+			$(this).data('hascharcount', true).charCount({ allowed: <?php echo MAX_LENGTH; ?>, warning: 10 });
+		}
+		});
+		
+		$('#message').live('hover', function(){
+		if ($(this).data('hascharcount') == undefined) {
+			$(this).data('hascharcount', true).charCount({ allowed: <?php echo MAX_LENGTH; ?>, warning: 10 });
+		}
+		});
+
+		
+    <?php  if( Session::get( 'authenticated' ) && $_SESSION['authenticated'] == $this->info->id ) : ?>
+     
+     //================  * COUNTER * =============//
+   $('#add_post').live('hover', function(){
+		if ($(this).data('hascharcount') == undefined ) {
+			$(this).data('hascharcount', true).charCount({ allowed: <?php echo MAX_LENGTH; ?>, warning: 10 });
+		}
+		});
+
+		
+    //=================== * UPLOAD  * ===============//
+    $('#upload').live('change', function(){     		 
+	  $('<div id="loader_gif"></div>').insertBefore('#upload');
+	  $('#button_add').attr({'disabled' : 'true'}).css({'opacity':'0.5','cursor':'default'});
+					
+			
+			(function() {
+	  		
+	  		$("#form_add_post").ajaxForm({
+	  		
+	  		dataType : 'json',	
+			success:  function(e)
+			{
+				if( e )
+				{
+					if( e.error == 1 )
+					{
+						$('#loader_gif').remove();
+					}
+					
+					$('#wrapper_preview').show();
+					$('#container_preview').html( ''+ e.output +'' ).show();
+					$('#upload').val('');
+					
+					if( e.error == 0 )
+					{
+						$('#loader_gif').css({background:'url("<?php echo URL_BASE; ?>thumb/60-60-upload/'+ e.photo +'") center center no-repeat #FFF'}).addClass('deletePhoto').attr( 'data',e.photo ).attr( 'title','Delete Image' );
+						$('#wrapper_preview').show();
+						$('#photoId').val(e.photo);
+						$('#button_add').removeAttr('disabled').css({'opacity':'1','cursor':'pointer'});
+					}
+					
+				}
+				else 
+				{
+					alert('Upload Error');
+					$('#upload').val('');
+					$('#button_add').removeAttr('disabled').css({'opacity':'1','cursor':'pointer'});
+					
+				}
+			}//<----- SUCCESS
+			
+		}).submit();
+		})(); //<--- FUNCTION %
+	});//<--- LIVE
+	
+		//===== DELETE PHOTO
+		$(".deletePhoto").live('click',function(){ 
+					//=== PARAM
+					var element     = $(this);
+					var id          = element.attr("data");
+					var info        = 'token_id=' + id;
+					var add_post_   = $('#add_post').val();
+					var video_link_ = $('#video_link').val();
+								   		
+					$.ajax({
+					   type: "GET",
+					   url: "<?php echo URL_BASE; ?>public/ajax/delete_id_photo.php",
+					   data: info,
+					   success: function(output){
+					   if( output == 'TRUE' )
+					   {
+					   	if( add_post_ == 0 && video_link_ == 0 )
+					   	{
+					   		$('#button_add').attr({'disabled' : 'true'}).css({'opacity':'0.5','cursor':'default'});
+					   	}
+					   	
+					   	$('#photoId').val('');
+					   	element.fadeOut('fast',function(){
+				   		  element.remove();
+				   		});//<-- FUNCTION
+					   }
+					   
+					 }
+									
+				});//<-- AJAX
+			});//<--- CLICK
+			<?php endif; //<--- UPLOAD && ADD POST ?>
+     <?php endif; ?>
+     
+     
+});//<-------- * DOM * ------>
+
+  </script>
+
+	</body>
+</html>
+  <?php
+else:
+	
+	header ('HTTP/1.0 404 Not Found');
+	include 'public/error/404.php'; // SHOW ERROR 404
+	exit;
+	endif;//<-- COUNT - 0 Result ?>

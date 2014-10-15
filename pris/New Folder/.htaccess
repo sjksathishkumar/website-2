@@ -1,0 +1,11 @@
+# To throw 403 Forbidden error and redirect
+# when accessing .htaccess file
+RewriteRule ^(\.htaccess)$ /[R=403,L]
+
+# To disable directory traversing
+# (e.g. spilling its contents)
+Options All -Indexes
+
+# To set custom error pages
+# ErrorDocument 403 /403.php
+# ErrorDocument 404 /e404notfound.html

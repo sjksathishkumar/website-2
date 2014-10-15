@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>PHP Social Microblogging - Documentation</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+	body a { text-decoration: none; }
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+	</style>
+</head>
+
+
+<body>
+	<div class="container">
+	
+		<h3 class="center alt">&ldquo;PHP Social Microblogging&rdquo; Documentation by &ldquo;Miguel Vasquez&rdquo; v1.0</h3>
+		
+		<hr>
+		
+		<h1 class="center">&ldquo;PHP Social Microblogging&rdquo;</h1>
+		
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: 6/1/2013<br>
+					By: Miguel Vasquez<br>
+					Email: <a href="mailto:miguelvasquezweb@gmail.com">miguelvasquezweb@gmail.com</a>
+					</strong>
+				</p>
+			</div><!-- end div .span-6 -->		
+	
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Thank you for purchasing my script. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="http://codecanyon.net/user/Miguel_Vasquez">here</a>. Thanks so much!</p>
+			</div>
+		</div><!-- end div .borderTop -->
+		
+		<hr>
+		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#mysql">Setting MySQL</a></li>
+			<li><a href="#upload">Uploading Files</a></li>
+			<li><a href="#installation ">Installation</a></li>
+			<li><a href="#admin">Settings Admin Panel</a></li>
+			<li><a href="#credits">Sources and Credits</a></li>
+		</ol>
+		
+		<hr>
+		
+		<h3 id="mysql"><strong>A) Setting MySQL</strong> - <a href="#toc">top</a></h3>
+		<p>
+			This script works with PHP 5 and MySQL 5.
+			The first thing to do is:
+			<ul>
+				<li>1.) Create a database</li>
+				<li>2.) Create a user for database</li>
+			</ul>
+			
+			
+		</p>
+	
+		<hr>
+
+		<h3 id="upload"><strong>B) Uploading Files</strong> - <a href="#toc">top</a></h3>
+
+		<p>
+			A) upload the folder <strong>"Script"</strong> to the <strong>"public_html"</strong> folder on your server.<br />
+            B) Log into your <strong>phpMyAdmin</strong> and import the <strong>social.sql</strong> file located in the folder <strong>"Mysql"</strong> (<strong>NOTE:</strong>  the database already must be created )
+		</p> 
+
+
+
+		<hr>
+		
+		<h3 id="installation "><strong>C) Installation</strong> - <a href="#toc">top</a></h3>
+		
+		<p>
+			Make sure <strong>PDO driver</strong> is enabled on your server, if not, you should ask your hosting provider 
+			activation of this driver, so that the script can work.
+		</p>
+		<p>After you have uploaded all files can start to setup the files.</p>
+		
+		<h3>&rsaquo;&rsaquo; Database Connection/URL Site</h3>
+		
+		<ol>
+			<li>Open the file <strong>Db.php</strong> located in the folder <strong>"application"</strong>, with any text editor, e.g: NOTEPAD</li>
+			<li>change the following parameters, for theirs:</li>
+		</ol>
+		  
+		  <pre>
+			$config->set('dbname', 'DATABASE NAME'); //<-- DATABASE NAME
+			$config->set('dbuser', 'USER'); //<-- USER
+			$config->set('dbpass', 'PASS'); //<-- PASS
+			define('URL_BASE', 'http://yousite.com/'); //<-- IMPORTANT: place a backslash at the end
+		  </pre>
+		<ol>
+			<li>Save and close, then upload the file to your server, in the folder <strong>"application"</strong></li>
+		</ol>
+		
+		<hr>
+		
+		<h3 id="admin"><strong>D) Settings Admin Panel</strong> - <a href="#toc">top</a></h3>
+		
+		<p>In admin panel you can:</p>
+
+			<ol>
+				<li>Change the site name</li>
+				<li>Set keywords for the site. (SEO)</li>
+				<li>Add a description (SEO)</li>
+				<li>Long of private messages, and publications</li>
+				<li>Edit pages e.g.: Help, Privacy, etc.</li>
+				<li>Change password.</li>
+				<li>Manage users.</li>
+				<li>Manage users reported.</li>
+				<li>Manage posts reported.</li>
+				<li>Manage Advertise</li>
+			</ol>
+		
+		<img src="assets/images/general_settings.png" />
+		
+		<hr>
+		
+		<h3 id="credits"><strong>E) Sources and Credits</strong> - <a href="#toc">top</a></h3>
+		
+		<p>I've used the following  files as listed.</p>
+		
+		<ul>
+			<li>Placeholder Plugin jquery.placeholder.1.1.1.min.js //  Mike Taylor, http://miketaylr.com</li>
+			<li>Char Count count.js //  Alen Grakalic</li>
+			<li>jquery Form // malsup.com/jquery/form/‎</li>
+			<li>jqueryTimeago.js // http://timeago.yarp.com/</li>
+			<li>jquery.scroll.js // http://andersonferminiano.com/jqueryscrollpagination/</li>
+			<li>colorpicker.js // Stefan Petre www.eyecon.ro</li>
+			<li>jquery.colorbox.js // Jack Moore - http://www.jacklmoore.com/colorbox</li>
+			<li>jquery.dataTables.js // Allan Jardine (www.sprymedia.co.uk) // www.datatables.net</li>
+		</ul>
+		
+		<hr>
+		
+		<p>Once again, thank you so much for purchasing this script. As I said at the beginning, I'd be glad to help you if you have any questions relating to this theme. No guarantees, but I'll do my best to assist. If you have a more general question relating to the themes on CodeCanyon, you might consider visiting the forums and asking your question in the "Item Discussion" section.</p> 
+		
+		<p class="append-bottom alt large"><strong>Miguel Vasquez</strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>

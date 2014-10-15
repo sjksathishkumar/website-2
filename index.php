@@ -54,7 +54,7 @@
                         <li><a href="services.php">Services</a></li>
                         <li><a href="tutorials.php">Tutorials</a></li>
                         <li><a href="pricing.php">Pricing</a></li>
-                        <li><a href="blog.php">Blog</a></li>
+                        <li><a href="/blog/index.php">Blog</a></li>
                         <li><a href="contact-us.php">Contact</a></li>
                     </ul>
                 </div>
@@ -518,30 +518,19 @@
 
     </div>
 
-     <!--parallax start-->
-     <section class="parallax1">
-         <div class="container">
-             <div class="row">
-                 <h1>“And here i am using my own lungs like a sucker. How is education supposed to make <br>
-                     me feel smarter?”</h1>
-             </div>
-         </div>
-     </section>
-     <!--parallax end-->
-
      <div class="container">
          <!--clients start-->
          <div class="clients">
              <div class="container">
                  <div class="row">
                      <div class="col-lg-12 text-center">
-                        <!-- <ul class="list-unstyled">
+                        <ul class="list-unstyled">
                              <li><a href="#"><img src="img/clients/logo1.png" alt=""></a></li>
                              <li><a href="#"><img src="img/clients/logo2.png" alt=""></a></li>
                              <li><a href="#"><img src="img/clients/logo3.png" alt=""></a></li>
                              <li><a href="#"><img src="img/clients/logo4.png" alt=""></a></li>
                              <li><a href="#"><img src="img/clients/logo5.png" alt=""></a></li>
-                         </ul>  -->
+                         </ul> 
                      </div>
                  </div>
              </div>

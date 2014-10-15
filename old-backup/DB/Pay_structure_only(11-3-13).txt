@@ -1,0 +1,299 @@
+-- phpMyAdmin SQL Dump
+-- version 3.3.9
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Mar 11, 2013 at 08:50 AM
+-- Server version: 5.5.8
+-- PHP Version: 5.3.5
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- Database: `payroll`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `category`
+--
+
+CREATE TABLE IF NOT EXISTS `category` (
+  `id` int(8) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `table_name` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `company`
+--
+
+CREATE TABLE IF NOT EXISTS `company` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `code` varchar(100) NOT NULL,
+  `name` varchar(200) NOT NULL,
+  `primary_admin` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `company_details`
+--
+
+CREATE TABLE IF NOT EXISTS `company_details` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `code` varchar(100) NOT NULL,
+  `logo` varchar(200) NOT NULL,
+  `emp_prefix` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `deo_details`
+--
+
+CREATE TABLE IF NOT EXISTS `deo_details` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `deo_id` varchar(100) NOT NULL,
+  `company_code` varchar(100) NOT NULL,
+  `doj` date NOT NULL,
+  `work_hour` int(11) NOT NULL,
+  `status` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `deo_login`
+--
+
+CREATE TABLE IF NOT EXISTS `deo_login` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `deo_id` varchar(100) NOT NULL,
+  `user_name` varchar(100) NOT NULL,
+  `user_pwd` varchar(100) NOT NULL,
+  `user_email` varchar(100) NOT NULL,
+  `dis_name` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `departments`
+--
+
+CREATE TABLE IF NOT EXISTS `departments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `dept_code` varchar(100) NOT NULL,
+  `dept_name` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `designation`
+--
+
+CREATE TABLE IF NOT EXISTS `designation` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `des_code` varchar(100) NOT NULL,
+  `des_name` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `emp_attendance`
+--
+
+CREATE TABLE IF NOT EXISTS `emp_attendance` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `emp_id` varchar(100) NOT NULL,
+  `company_code` varchar(100) NOT NULL,
+  `leave_acquired` int(11) NOT NULL,
+  `month` varchar(50) NOT NULL,
+  `year` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `emp_comp_details`
+--
+
+CREATE TABLE IF NOT EXISTS `emp_comp_details` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `emp_id` varchar(100) NOT NULL,
+  `company_code` varchar(100) NOT NULL,
+  `pan_no` varchar(100) NOT NULL,
+  `bank_name` varchar(100) NOT NULL,
+  `acc_no` varchar(100) NOT NULL,
+  `pf_no` varchar(100) NOT NULL,
+  `esi_no` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `emp_details`
+--
+
+CREATE TABLE IF NOT EXISTS `emp_details` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `emp_id` varchar(100) NOT NULL,
+  `company_code` varchar(100) NOT NULL,
+  `desig_code` varchar(100) NOT NULL,
+  `dept_code` varchar(100) NOT NULL,
+  `dob` date NOT NULL,
+  `doj` date NOT NULL,
+  `photo` varchar(200) NOT NULL,
+  `status` varchar(100) NOT NULL,
+  `addr` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `emp_leave`
+--
+
+CREATE TABLE IF NOT EXISTS `emp_leave` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `emp_id` varchar(100) NOT NULL,
+  `company_code` varchar(100) NOT NULL,
+  `leave_code` varchar(50) NOT NULL,
+  `pay_status` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `emp_leave_status`
+--
+
+CREATE TABLE IF NOT EXISTS `emp_leave_status` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `emp_id` varchar(100) NOT NULL,
+  `company_id` varchar(100) NOT NULL,
+  `leave_eligible` int(11) NOT NULL,
+  `leave_acquired` int(11) NOT NULL,
+  `leave_remaining` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `emp_login`
+--
+
+CREATE TABLE IF NOT EXISTS `emp_login` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(100) NOT NULL,
+  `user_pwd` varchar(100) NOT NULL,
+  `user_email` varchar(100) NOT NULL,
+  `disp_name` varchar(100) NOT NULL,
+  `emp_id` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `emp_paydetails`
+--
+
+CREATE TABLE IF NOT EXISTS `emp_paydetails` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `emp_id` varchar(100) NOT NULL,
+  `company_id` varchar(100) NOT NULL,
+  `leave_eligible` int(11) NOT NULL,
+  `leave_eligible_routine` char(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `emp_status`
+--
+
+CREATE TABLE IF NOT EXISTS `emp_status` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `status_code` varchar(100) NOT NULL,
+  `status_name` varchar(200) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `leave_type`
+--
+
+CREATE TABLE IF NOT EXISTS `leave_type` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `leave_code` varchar(100) NOT NULL,
+  `leave_name` varchar(100) NOT NULL,
+  `pay_status` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `master_admin_login`
+--
+
+CREATE TABLE IF NOT EXISTS `master_admin_login` (
+  `id` int(8) NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(100) NOT NULL,
+  `user_email` varchar(100) NOT NULL,
+  `user_pwd` varchar(100) NOT NULL,
+  `disp_name` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_admin_login`
+--
+
+CREATE TABLE IF NOT EXISTS `user_admin_login` (
+  `id` int(8) NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(100) NOT NULL,
+  `user_pwd` varchar(100) NOT NULL,
+  `user_email` varchar(100) NOT NULL,
+  `disp_name` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `working_days`
+--
+
+CREATE TABLE IF NOT EXISTS `working_days` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `month` varchar(100) NOT NULL,
+  `no_days` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;

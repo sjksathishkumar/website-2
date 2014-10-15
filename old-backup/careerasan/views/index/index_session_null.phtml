@@ -1,0 +1,140 @@
+<?php include 'views/inc/header.php'; 
+?>
+</head>
+<!-- Body -->
+	<body id="sessionNull">
+		
+		<!-- warpper_top_bar -->
+		<div class="warpper_top_bar">
+				<!-- inner_top_bar -->
+				<header class="inner_top_bar">
+					<!-- padding_class -->
+					<div class="padding_class">
+						<?php include 'views/inc/logo.php'; ?>
+			    </div><!-- padding_class -->
+			</header><!-- inner_top_bar -->
+		</div><!-- warpper_top_bar -->
+		
+		<!-- layout -->
+		<section class="layout session_null">
+			<div class="popout"></div>
+
+			<!-- padding_class -->
+		    <div class="padding_class">
+		  
+			   <!-- map -->
+			<div class="map">
+				<img src="<?php echo $_layoutParams['root_img']; ?>map.png" class="map_img" />
+			   </div><!-- map -->
+			   		
+			   			<!-- welcome_text -->
+			   			<h1 class="welcome_text">
+			   			Discover, share and communicate with loved ones and the World. Sign in or Sign up Now!
+			   		</h1><!-- welcome_text -->
+			   		
+			   		
+			   			<!-- form_signin -->
+			   			<div class="signin_form">
+		    				<h3>Have an account? <strong>Sign in</strong>!</h3>
+		    				
+		    				<form style="display: none; border-top: 1px solid #FFF;" action="" method="post" name="form" id="recover_pass_form" class="form_login recoverForm">
+		    					<input type="text" name="email_recover" id="email_recover" placeholder="Enter your email address" title="Enter your email address" />
+		    					<a style="cursor: pointer;" class="recover_pass buttonInside forgot buttonBack">&laquo; Back</a>
+		    					<span id="error_recover"></span>
+		    					<span id="success_recover"></span>
+		    					<button type="submit" id="buttonRecoverPass">Send</button>
+		    				</form>
+		    				
+		    				<form action="" method="post" name="form" id="signin_form" class="signInForm">
+		    					<input type="text" name="user" id="user" placeholder="Username or email" title="Username or email" />
+		    					<input type="password" name="password" id="password_signin" placeholder="Password" title="Password" />
+		    					<a style="cursor: pointer;"  class="recover_pass forgot buttonForgot">Forgot password?</a>
+		    					<span id="error"></span>
+		    					<span id="success_signin"></span>
+		    					<button type="submit" id="buttonSignIn">Sign in</button>
+		    				</form>
+			   		</div><!-- form_signup -->
+			   		
+			   		
+			   		<!-- form_signup -->
+			   		<div class="form_signup">
+		    				<h3>Do not have an account? <strong>Sign up is Free</strong>!</h3>
+		    				<form action="" method="post" name="form" id="signup_form">
+		    					<input type="text" name="full_name" id="full_name" placeholder="Full Name" title="Full Name" />
+		    					<input type="text" name="username" id="username" placeholder="Username" title="Username" />
+		    					<input type="text" name="email" id="email" placeholder="Email" title="Email" />
+		    					<input type="password" name="password" id="password" placeholder="Password" title="Password" />
+		    					<input type="text" name="captcha" id="lcaptcha" placeholder="" title="" />
+		    					<input type="checkbox" value="1" name="terms" id="terms" tabindex="3" checked="checked">
+		    					<a href="terms/" class="recover_pass termsLegal" title="Read Terms &amp; Conditions" target="_blank">Terms &amp; Conditions</a>
+		    					<span id="errorSignUp"></span>
+		    					<span id="success"></span>
+		    					<button type="submit" id="buttonSubmit"><span>Sign up</span></button>
+		    				</form>
+		    				
+			   		</div><!-- form_signup -->
+			   		
+			 </div><!-- padding_class -->
+		</section><!-- layout -->
+		
+		<!-- footer -->
+		<footer class="footer">
+			<ul>
+				<li>
+					<a href="<?php echo URL_BASE; ?>about/">About</a>
+				</li>
+				
+				<li>
+					<a href="<?php echo URL_BASE; ?>terms/">Terms</a>
+				</li>
+				
+				<li>
+					<a href="<?php echo URL_BASE; ?>privacy/">Privacy</a>
+				</li>
+				
+				<li>
+					<a href="<?php echo URL_BASE; ?>advertising/">Advertisers</a>
+				</li>
+				
+				<li>
+					<a href="<?php echo URL_BASE; ?>help/">Help</a>
+				</li>
+				
+				
+				<li>
+					&copy; <?php echo date('Y')." ".SITE_NAME; ?>
+				</li>
+				
+			</ul>
+		</footer><!-- footer -->
+   
+   <script src="<?php echo $_layoutParams['root_js']; ?>jquery-1.7.1.min.js" type="text/javascript"></script>
+   <script src="<?php echo $_layoutParams['root_js']; ?>login.sign.up.js"></script>
+   <script src="<?php echo $_layoutParams['root_js']; ?>jquery.backstretch.min.js"></script>
+   <script src="<?php echo $_layoutParams['root_js']; ?>jquery.placeholder.1.1.1.min.js"></script>
+   
+   <script>
+   $.backstretch(["<?php echo $_layoutParams['root_img']; ?>bg.jpg"]);
+   jQuery(document).ready(function($) {
+  
+  <?php if( $this->accountValidate == 1 && isset( $_GET['validate'] ) ): ?>
+  $('.popout').html( 'Your account has been successfully validated' ).fadeIn( 500 );
+  <?php endif; ?>
+  
+  <?php if( $this->accountValidate == 0 && isset( $_GET['validate'] ) ): ?>
+  $('.popout').html( 'Code not valid!' ).fadeIn( 500 );
+  <?php endif; ?>
+  
+  $(function(){
+      $(':input[placeholder]').placeholder();
+    });
+    
+    //CAPTCHA
+	generate_captcha('lcaptcha');
+   });
+
+  </script>
+ </body>
+</html>
+
+   

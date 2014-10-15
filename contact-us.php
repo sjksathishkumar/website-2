@@ -80,8 +80,7 @@
                 </div>
                 <div class="col-lg-8 col-sm-8">
                     <ol class="breadcrumb pull-right">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Pages</a></li>
+                        <li><a href="index.php">Home</a></li>
                         <li class="active">Contacts</li>
                     </ol>
                 </div>
@@ -103,7 +102,7 @@
 
         <div class="row">
             <div class="col-lg-5 col-sm-5 address">
-                <h4>Bass Techs</h4>
+                <h4>Bass Pris</h4>
                 <p>
                     No 60/5,Ground Floor,<br/>
 
