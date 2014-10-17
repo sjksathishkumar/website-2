@@ -95,30 +95,134 @@
 
 
         <div class="row">
-
+            <div class="col-lg-2 col-sm-2 address">
+            </div>
             <div class="col-lg-7 col-sm-7 address">
                 <h4>Send a Message</h4>
                 <div class="contact-form">
-                    <form role="form">
+                    <form role="form" name="purchase" id="purchase" action="signup-process.php" method="post">
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" placeholder="" id="name" class="form-control">
+                            <input type="text" placeholder="" id="name" name="name" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="text" placeholder="" id="email" class="form-control">
+                            <input type="text" placeholder="" id="email" name="email" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="company-name">Company Name</label>
-                            <input type="text" placeholder="" id="company-name" class="form-control">
+                            <label for="company_name">Company Name</label>
+                            <input type="text" placeholder="" id="company_name" name="company_name" class="form-control">
                         </div>                        
                         <div class="form-group">
-                            <label for="phone">Phone</label>
-                            <input type="text" id="phone" class="form-control">
+                            <label for="mobile">Mobile</label>
+                            <input type="text" id="mobile" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="phone">Message</label>
-                            <textarea placeholder="" rows="5" class="form-control"></textarea>
+                          <label for="industry">Industry</label><br>
+                          <select id="industry" name="industry">
+                            <option value="Accounting-Payroll">Accounting and Payroll</option>
+                            <option value="Advertising">Advertising</option>
+                            <option value="Aerospace">Aerospace</option>
+                            <option value="Agriculture">Agriculture</option>
+                            <option value="Apparel">Apparel</option>
+                            <option value="Auditing-Taxation">Auditing and Taxation</option>
+                            <option value="Automobile">Automobile Industry</option>
+                            <option value="Aviation">Aviation</option>
+                            <option value="Banking-Finacial-Service">Banking/Finacial Services</option>
+                            <option value="Biotechnology">Biotechnology</option>
+                            <option value="BPO">BPO</option>
+                            <option value="Broadcasting">Broadcasting</option>
+                            <option value="Brokerage">Brokerage</option>
+                            <option value="Capital-Goods">Capital Goods</option>
+                            <option value="Cargo-Courier">Cargo / Courier</option>
+                            <option value="Chemicals">Chemicals</option>
+                            <option value="Commertial-Professional-Service">Commertial & Professional Service</option>
+                            <option value="Communication">Communication</option>
+                            <option value="Construction">Construction</option>
+                            <option value="Consulting">Consulting</option>
+                            <option value="Consumer-Products">Consumer Products</option>
+                            <option value="Cosmetics">Cosmetics</option>
+                            <option value="Defense">Defense</option>
+                            <option value="Department-Stores">Department Stores</option>     
+                            <option value="Education">Education</option>
+                            <option value="Electrical-Electronics-Manufacturing">Electrical/Electronics Manufacturing</option>
+                            <option value="Energy">Energy</option>
+                            <option value="Engineering">Engineering</option>
+                            <option value="Entertainment">Entertainment</option>
+                            <option value="Entrainment">Entrainment</option>
+                            <option value="Environmental">Environmental</option>
+                            <option value="Executive-Search">Executive Search</option>
+                            <option value="Fecility-Management">Fecility Management</option>
+                            <option value="Finance">Finance</option>
+                            <option value="Food-Agro-Product">Food / Agro Product</option>
+                            <option value="Food-Beverage-Tobacco">Food / Beverage, Tobacco</option>
+                            <option value="Food-Staples-Retailing">Food / Staples Retailing </option>
+                            <option value="Gaming-Animation">Gaming/Animation</option>
+                            <option value="Government">Government</option>
+                            <option value="Grocery">Grocery</option>
+                            <option value="Healthcare">Healthcare</option>
+                            <option value="Healthcare-equipment-services">Healthcare equipment & services</option>
+                            <option value="Hospitality">Hospitality</option>
+                            <option value="Hotel">Hotel Industry</option>
+                            <option value="Household-Personal-Product">Household & Personal Product</option>
+                            <option value="HR-Accounting">HR/Accounting</option>
+                            <option value="HR-Consultant">HR Consultant</option>
+                            <option value="HRO">HRO</option>
+                            <option value="Information-Technology">Information Technology</option>
+                            <option value="Insurence">Insurence</option>
+                            <option value="Internet-Publishing">Internet Publishing</option>
+                            <option value="Investment-Banking">Investment Banking</option>
+                            <option value="IT-Hardware-Solution">IT - Hardware Solution</option>
+                            <option value="IT-ITES-KBP-BPO">IT ITES-KBP BPO</option>     
+                            <option value="IT-Software-Products">IT - Software Products</option>
+                            <option value="IT-Software-Services">IT - Software Services</option>
+                            <option value="Legal">Legal</option>
+                            <option value="Logistics">Logistics</option>
+                            <option value="Machinery">Machinery</option>
+                            <option value="Management-Consulting">Management Consulting</option>
+                            <option value="Manufacturing">Manufacturing</option>
+                            <option value="Manufacturing-Garments">Manufacturing - Garments</option>
+                            <option value="Manufacturing-Others">Manufacturing - Others</option>
+                            <option value="Materials">Materials</option>
+                            <option value="Media">Media</option>
+                            <option value="Media-Marketing">Media / Marketing</option>
+                            <option value="Motion-Picture-Video">Motion Picture & Video</option>
+                            <option value="Music">Music</option>
+                            <option value="Newspaper-Publisher">Newspaper Publisher</option>
+                            <option value="Non-Profit-NGO">Non-Profit / NGO</option>
+                            <option value="Online-Actions">Online Actions</option>
+                            <option value="Other">Other</option>
+                            <option value="Payroll-Processor">Payroll Processor</option>     
+                            <option value="Pension-Funds">Pension Funds</option>
+                            <option value="PF-Consultant">PF Consultant</option>
+                            <option value="Pharmaceutical-Healthcare">Pharmaceutical/Healthcare</option>
+                            <option value="Private-Equity">Private Equity</option>
+                            <option value="Product-Engineering-Solutions">Product Engineering Solutions</option>
+                            <option value="Publications">Publications</option>
+                            <option value="Real-Estate">Real Estate</option>
+                            <option value="Recreation">Recreation</option>
+                            <option value="Retail-Supplier-Trading">Retail/Supplier/Trading</option>     
+                            <option value="Security-Systems">Security Systems</option>
+                            <option value="Semiconductor-Semiconductor-Equipment">Semiconductor / Semiconductor Equipment</option>
+                            <option value="Service">Service</option>
+                            <option value="Shipping">Shipping</option>
+                            <option value="Soap-and-Detergent">Soap and Detergent</option>
+                            <option value="Software">Software</option>
+                            <option value="Sports">Sports</option>
+                            <option value="Technology">Technology</option>
+                            <option value="Telecom">Telecom</option>
+                            <option value="Television">Television</option>
+                            <option value="Textile-Industry">Textile Industry</option>
+                            <option value="Transportation">Transportation</option>
+                            <option value="Travel-Industry">Travel Industry</option>
+                            <option value="Trucking">Trucking</option>
+                            <option value="Utilities">Utilities</option>
+                            <option value="Venture-Capital">Venture Capital</option>
+                          </select>                        
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Description (Optional)</label>
+                            <textarea placeholder="" rows="5" class="form-control" id="message" name="message"></textarea><br>
                         </div>
                         <button class="btn btn-danger" type="submit">Submit</button>
                     </form>
