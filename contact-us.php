@@ -128,185 +128,43 @@ Chennai, Tamilnadu ., 600020.<br/>
                         <h4>Write Us</h4>
 
                 <section class="panel mtop30 tab">
-                    <header class="panel-heading service-tab tab-bg-dark-navy-blue">
-                        <ul class="nav nav-tabs nav-justified ">
-                            <li class="active">
-                                <a data-toggle="tab" href="#service1">
-                                   Enquiry Form
-                                </a>
-                            </li>
-                            <li>
-                                <a data-toggle="tab" href="#service2">
-                                   Feedback Form
-                                </a>
-                            </li>
-                            <li class="">
-                                <a data-toggle="tab" href="#service3">
-                                    Work With Us
-                                </a>
-
-                            </li>
-
-                        </ul>
-                    </header>
                     <div class="panel-body">
                         <div class="tab-content tasi-tab">
                             <div id="service1" class="tab-pane active">
                                 <div class="services">
                                    <div class="content">
-                                               <div class="contact-form">
-
-                   <form method="post" action="enquiry-process.php">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name"  name="name" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="text" name="email" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone</label>
-                            <input type="text" name="phone" class="form-control">
-                        </div>
-                         <div class="form-group">
-                            <label for="companyname">Company Name</label>
-                            <input type="text" name="companyname" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="address1">Address1</label>
-                            <input type="text" name="address1" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="address2">Address2</label>
-                            <input type="text" name="address2" class="form-control">
-                        </div>
-
-                         <div class="form-group">
-                            <label for="pincode">Postal Code</label>
-                            <input type="text" name="pincode" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea name="message" rows="5" class="form-control"></textarea>
-                        </div>
-                        <div class="form-group">
-                       <label for="enquiry">File Attachment</label>
-                       <input type="file" name="enquiry" id="enquiry"></p>                       </div>
-                       <br> <button class="btn btn-danger" type="submit">Submit</button>
-                    </form>
-
-                </div>
-                                                                        </div>
-                                </div>
-                            </div>
-                            <div id="service2" class="tab-pane">
-                                <div class="services">
-                                 <!--   <div class="icon-wrap ico-bg round">
-                                        <i class="fa fa-tint"></i>
-                                    </div>             -->
-                                    <div class="content">
-
-                   <form method="post" action="feedback-process.php"  role="form">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" name="name" id="name" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="text" name="email" id="email" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone</label>
-                            <input type="text"  name="phone" id="phone" class="form-control">
-                        </div>
-                         <div class="form-group">
-                            <label for="companyname">Company Name</label>
-                            <input type="text"  name="companyname" id="companyname" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="address1">Address1</label>
-                            <input type="text" name="address1" id="address1" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="address2">Address2</label>
-                            <input type="text" name="address2" id="address2" class="form-control">
-                        </div>
-
-                         <div class="form-group">
-                            <label for="pincode">Postal Code</label>
-                            <input type="text" name="pincode" id="pincode" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <input type="text" name="message" id="message" class="form-control">
-                        </div>
-                        <div class="form-group">
-                       <label for="file">File Attachment</label>
-                       <input type="file" name="file" id="file"></p>
-                         </div>
-                       <br> <button class="btn btn-danger" type="submit">Submit</button>
-                    </form>
-
+                                      <div class="contact-form">
+                                        <form method="post" action="contact-process.php">
+                                          <div class="form-group">
+                                              <label for="name">Name</label>
+                                              <input type="text" id="name"  name="name" class="form-control">
+                                          </div>
+                                          <div class="form-group">
+                                              <label for="email">Email</label>
+                                              <input type="text" name="email" class="form-control">
+                                          </div>
+                                          <div class="form-group">
+                                              <label for="phone">Mobile</label>
+                                              <input type="text" name="mobile" class="form-control">
+                                          </div>
+                                          <div class="form-group">
+                                              <label for="company_name">Company Name</label>
+                                              <input type="text" name="company_name" class="form-control">
+                                          </div>
+                                          <div class="form-group">
+                                              <label for="address1">Address</label>
+                                              <input type="text" name="address" class="form-control">
+                                          </div>
+                                          <div class="form-group">
+                                              <label for="message">Message</label>
+                                              <textarea name="message" rows="5" class="form-control"></textarea>
+                                          </div>
+                                          <br> <button class="btn btn-danger" type="submit">Submit</button>
+                                        </form>
+                                      </div>
                                     </div>
                                 </div>
                             </div>
-                            <div id="service3" class="tab-pane">
-                                <div class="services">
-                                 <!--   <div class="icon-wrap ico-bg round">
-                                        <i class=" fa fa-umbrella"></i>
-                                    </div> -->
-                                    <div class="content">
-
-                   <form method="post" action="workwithus.php"  role="form">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" name="name" id="name" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">E-mail</label>
-                            <input type="text" name="email" id="email" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone</label>
-                            <input type="text" name="phone" id="phone" class="form-control">
-                        </div>
-                         <div class="form-group">
-                            <label for="qualification">Qualification</label>
-                            <input type="text" name="qualification" id="qulification" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="address1">Address1</label>
-                            <input type="text" name="address1" id="address1" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="address2">Address2</label>
-                            <input type="text" name="address2" id="address2" class="form-control">
-                        </div>
-
-                         <div class="form-group">
-                            <label for="pincode">Postal Code</label>
-                            <input type="text" name="pincode" id="pincode" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="interested">Interested In</label>
-                               <input type="text" name="interested" id="interested" class="form-control">
-                        </div>
-                        <div class="form-group">
-                       <label for="file">Resume Attachment</label>
-                       <input type="file" name="file" id="file"></p>
-                         </div>
-                       <br> <button class="btn btn-danger" type="submit">Submit</button>
-                    </form>
-
-                                         </div>
-                                </div>
-                            </div>
-
-
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </section>
@@ -314,9 +172,6 @@ Chennai, Tamilnadu ., 600020.<br/>
         </div>
     </div>
     <!--container end-->
-
-
-
     <!--container end-->
 
      <!--footer start-->
@@ -339,7 +194,6 @@ Chennai, Tamilnadu ., 600020.<br/>
 
 
   <script>
-
       //google map
       function initialize() {
           var myLatlng = new google.maps.LatLng(-37.815207, 144.963937);
@@ -357,10 +211,6 @@ Chennai, Tamilnadu ., 600020.<br/>
           });
       }
       google.maps.event.addDomListener(window, 'load', initialize);
-
-
-
   </script>
-
   </body>
 </html>
