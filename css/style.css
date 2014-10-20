@@ -197,6 +197,15 @@ p {line-height: 22px}
     margin-left: 10px;
 }
 
+/*information display*/
+.information {
+    width: 100%;
+    background: #eeeeee;
+    display: block;
+    border-radius: 5px;
+    padding: 20px;
+}
+
 /*homepage features*/
 
 .feature-head {
@@ -2069,6 +2078,13 @@ label{
     color:#222;
     font-family:corbel,sans-serif;
     font-size: 14px;
+    margin: 1px;
+}
+.error {
+    padding:5px;
+    color:#E80606;
+    font-family:corbel,sans-serif;
+    font-size: 12px;
     margin: 1px;
 }
 label1{

@@ -62,7 +62,7 @@
                         <li><a href="services.php">Services</a></li>
                         <li><a href="tutorials.php">Tutorials</a></li>
                         <li class="active"><a href="pricing.php">Pricing</a></li>
-                        <li><a href="blog.php">Blog</a></li>
+                        <li><a href="blog/index.php">Blog</a></li>
                         <li><a href="contact-us.php">Contact</a></li>
                     </ul>
                 </div>
@@ -95,13 +95,22 @@
 
 
         <div class="row">
-            <div class="col-lg-2 col-sm-2 address">
+            <div class="col-lg-1 col-sm-1 address">
             </div>
-            <div class="col-lg-7 col-sm-7 address">
+            <div class="col-lg-6 col-sm-6 address">
                 <h4>Send a Message</h4>
                 <div class="contact-form">
                     <form role="form" name="purchase" id="purchase" action="signup-process.php" method="post">
+                        <?php
+                            $package = $_GET['package'];
+                            $no_of_emp = $_GET['noofemp'];
+                            $amount    = $_GET['amount'];
+                            echo "<div class='information' align='center'><h5>You are Choosing <strong>$package</strong> Package for <strong>$no_of_emp Employees</strong>.<br><br>And your total is <strong>$amount</strong></h5></div>";
+                        ?>
                         <div class="form-group">
+                            <input type="hidden" value="<?php echo "$package"; ?>" name="package" id="package">
+                            <input type="hidden" value="<?php echo "$no_of_emp"; ?>" name="no_emp" id="no_emp">
+                            <input type="hidden" value="<?php echo "$amount"; ?>" name="amount" id="amount">
                             <label for="name">Name</label>
                             <input type="text" placeholder="" id="name" name="name" class="form-control">
                         </div>
@@ -112,10 +121,22 @@
                         <div class="form-group">
                             <label for="company_name">Company Name</label>
                             <input type="text" placeholder="" id="company_name" name="company_name" class="form-control">
-                        </div>                        
+                        </div>   
+                        <div class="form-group">
+                            <label for="designation">Designation</label><br>
+                            <select name="designation" id="designation">
+                              <option>CEO</option>
+                              <option>Director</option>
+                              <option>Executive Officer</option>
+                              <option>Executive Director</option>
+                              <option>Manager</option>
+                              <option>Senior Manager</option>
+                              <option>Others</option>
+                            </select>
+                        </div>                     
                         <div class="form-group">
                             <label for="mobile">Mobile</label>
-                            <input type="text" id="mobile" class="form-control">
+                            <input type="text" id="mobile" name="mobile" class="form-control">
                         </div>
                         <div class="form-group">
                           <label for="industry">Industry</label><br>
@@ -229,6 +250,30 @@
 
                 </div>
             </div>
+            <div class="col-lg-1 col-sm-1 address">
+            </div>
+            <div class="col-lg-4 col-sm-4 address">
+                <div class="pricing-table">
+                    <div class="pricing-head">
+                        <h1> Diamond </h1>
+                        <h2><span class="note">&#8377</span><label1 id="amount3"></label1> <span class="note1">pm</span></h2>
+                    </div>
+                    <ul class="list-unstyled">
+                         <li><strong>Base Fee : &#8377 7999 </strong></li>
+                         <li>No of Employee's : <var id="emp-diamond"></var></li>
+                         <li>Core Payroll</li>
+                         <li>MIS Reports</li>
+                         <li>Statutory Compliance (India)</li>
+                         <li>Leave Management System</li>
+                         <li>Multiple Companies*</li>
+                         <li>-</li>
+                         <li>-</li>
+                    </ul>
+                    <div class="price-actions">
+                        <a href="signup.php" id="basspris4"  class="btn">Get Now</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!--container end-->
@@ -249,37 +294,77 @@
     <script type="text/javascript" src="js/hover-dropdown.js"></script>
     <script type="text/javascript" src="assets/bxslider/jquery.bxslider.js"></script>
 
+    <!-- Script for Validation Form -->
 
-    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&AMP;sensor=false"></script>
+    <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
+    <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+    
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $("#purchase").validate({
+          rules: {
+            name: "required",
+            company_name: "required",
+            email: {
+              required: true,
+              email: true
+            },
+            mobile: {
+              required: true,
+              digits: true,
+              minlength: 10,
+              maxlength: 10
+            }
+          },
+          messages: {
+            name: "Please specify your Name",
+            company_name: "Please enter your company name",
+            email: {
+              required: "Please Enter your Email.",
+              email: "Your email address must be in the format of name@domain.com"
+            },
+            mobile: {
+              required: "Please enter Mobile Number"
+            }
+          },
+          submitHandler:
+              function(){
+              var form = $("#purchase");
+              var postData = $("#purchase").serializeArray();
+              var formURL = $("#purchase").attr("action");
+              $.ajax(
+              {
+                  url : formURL,
+                  type: "POST",
+                  data : postData,
+                  success:function(msg) 
+                  {
+                    if(msg == "success")
+                    {
+                     $(form).fadeOut(800, function(){
+                              form.html('<div class="information"><header>Thanks for your Enquiry ! Please activate email !</header><p>We will contact you shortly. If you have queries please mail to <strong>info@basspris.com</strong></p></div>').fadeIn().delay(2000);
+                           });
+                   }
+                   else
+                   {
+                    $(form).fadeOut(800, function(){
+                              form.html('<div class="information"><header>Your Application submition Failed!</header><p>Please try again! If you have queries please mail to <strong>info@bassbiz.in</strong></p></div>').fadeIn().delay(2000);
+                           });
+                   }
+                    
+                  }
+              });
+          }
+
+        });
+       });
+	</script>
+
+	
 
     <!--common script for all pages-->
     <script src="js/common-scripts.js"></script>
-
-
-  <script>
-
-      //google map
-      function initialize() {
-          var myLatlng = new google.maps.LatLng(-37.815207, 144.963937);
-          var mapOptions = {
-              zoom: 15,
-              scrollwheel: false,
-              center: myLatlng,
-              mapTypeId: google.maps.MapTypeId.ROADMAP
-          }
-          var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-          var marker = new google.maps.Marker({
-              position: myLatlng,
-              map: map,
-              title: 'Hello World!'
-          });
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
-
-
-
-  </script>
-
   </body>
 </html>
 
+ 

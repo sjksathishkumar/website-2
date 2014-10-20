@@ -87,14 +87,21 @@
     <!--container start-->
     <div class="container">
         <div class="row">
-            <!--price start-->
             <div class="text-center feature-head">
                 <h1> Indianized Payroll and Recruitment Information System at Affordable Price  </h1>
                 <p>Pay as You Utilize Our Package</p>
             </div>
                 <h2 align="center">Trag the Mouse to indicate your No of Employees</h2>
-            <div style="position: relative; padding: 50px;">
-              <input type="text" id="range_1" />
+            <div class="col-lg-10 col-sm-10">
+              <input type="text" id="range_1"/>
+            </div>
+            <div class="col-lg-2 col-sm-2">
+              <br><input type="text" id="emp" name="emp" placeholder="Enter Manually"></p>
+            </div>
+        </div>
+        <div class="row">
+            <!--price start-->
+            <div style="position: relative; padding: 50px;" >
             </div>
             <div class="col-lg-3 col-sm-3">
                 <div class="pricing-table">
@@ -103,18 +110,18 @@
                         <h2><span class="note">&#8377</span><label1 id="amount"></label1> <span class="note1">pm</span></h2>
                     </div>
                     <ul class="list-unstyled">
-                         <li><strong>Base Fee : &#8377 699 </strong></li>
-                         <li>No of Employee's : <var id="emp-silver"></var></li>
+			             <li><strong>Base Fee : &#8377 699 </strong></li>
+			             <li>No of Employee's : <var id="emp-silver"></var></li>
                          <li>Core Payroll</li>
                          <li>MIS Reports</li>
                          <li>Statutory Compliance (India)</li>
-                         <li>Leave Management System</li>
-                         <li>-</li>  
-                         <li>-</li>
-                         <li>-</li>
+			             <li>Leave Management System</li>
+			             <li>-</li>  
+			             <li>-</li>
+			             <li>-</li>
                     </ul>
                     <div class="price-actions">
-                        <a href="signup.php?package=sliver&&noofemp=<var id='emp-gold'></var>" id="sliver" class="btn">Get Now</a>
+                        <a href="signup.php" id="sliver" class="btn">Get Now</a>
                     </div>
                 </div>
             </div>
@@ -125,18 +132,18 @@
                         <h2><span class="note">&#8377</span><label1 id="amount1"></label1> <span class="note1">pm</span></h2>
                     </div>
                     <ul class="list-unstyled">
-                         <li><strong>Base Fee : &#8377 1499 </strong></li>
-                         <li>No of Employee's : <var id="emp-gold"></var></li>
+			             <li><strong>Base Fee : &#8377 1499 </strong></li>
+			             <li>No of Employee's : <var id="emp-gold"></var></li>
                          <li>Core Payroll</li>
                          <li>MIS Reports</li>
                          <li>Statutory Compliance (India)</li>
-                         <li>Leave Management System</li>
+			             <li>Leave Management System</li>
                          <li>Employee Self Service</li>
                          <li>Reimbursement Mgmt System</li>
-                         <li>-</li>
+			             <li>-</li>
                     </ul>
                     <div class="price-actions">
-                        <a href="signup.php" id="basspris2" class="btn">Get Now</a>
+                        <a href="signup.php" id="gold" class="btn">Get Now</a>
                     </div>
                 </div>
             </div>
@@ -147,18 +154,18 @@
                         <h2><span class="note">&#8377</span><label1 id="amount2"></label1> <span class="note1">pm</span></h2>
                     </div>
                     <ul class="list-unstyled">
-                         <li><strong>Base Fee : &#8377 2499 </strong></li>
-                         <li>No of Employee's : <var id="emp-platinum"></var></li>
+			             <li><strong>Base Fee : &#8377 2499 </strong></li>
+			             <li>No of Employee's : <var id="emp-platinum"></var></li>
                          <li>Core Payroll</li>
                          <li>MIS Reports</li>
                          <li>Statutory Compliance (India)</li>
-                         <li>Leave Management System</li>
+			             <li>Leave Management System</li>
                          <li>Employee Self Service</li>
                          <li>Reimbursement Mgmt System</li>
-                         <li>Loan Management System</li>
+			             <li>Loan Management System</li>
                     </ul>
                     <div class="price-actions">
-                        <a href="signup.php" id="basspris3" class="btn">Get Now</a>
+                        <a href="signup.php" id="platinum" class="btn">Get Now</a>
                     </div>
                 </div>
             </div>
@@ -169,18 +176,18 @@
                         <h2><span class="note">&#8377</span><label1 id="amount3"></label1> <span class="note1">pm</span></h2>
                     </div>
                     <ul class="list-unstyled">
-                         <li><strong>Base Fee : &#8377 7999 </strong></li>
-                         <li>No of Employee's : <var id="emp-diamond"></var></li>
+			             <li><strong>Base Fee : &#8377 7999 </strong></li>
+			             <li>No of Employee's : <var id="emp-diamond"></var></li>
                          <li>Core Payroll</li>
                          <li>MIS Reports</li>
                          <li>Statutory Compliance (India)</li>
-                         <li>Leave Management System</li>
+			             <li>Leave Management System</li>
                          <li>Multiple Companies*</li>
                          <li>-</li>
-                         <li>-</li>
+			             <li>-</li>
                     </ul>
                     <div class="price-actions">
-                        <a href="signup.php" id="basspris4"  class="btn">Get Now</a>
+                        <a href="signup.php" id="diamond"  class="btn">Get Now</a>
                     </div>
                 </div>
             </div>
@@ -214,35 +221,37 @@
 
     <script type=text/javascript>
     $(document).ready(function(){
-    
-       document.getElementById('amount').innerHTML =699;
+	
+	   document.getElementById('amount').innerHTML =699;
        document.getElementById('amount1').innerHTML =1499;
        document.getElementById('amount2').innerHTML =2499;
        document.getElementById('amount3').innerHTML =7999;
-       document.getElementById('emp-silver').innerHTML = 15;
-       document.getElementById('emp-gold').innerHTML = 15;
-       document.getElementById('emp-diamond').innerHTML = 15;
-       document.getElementById('emp-platinum').innerHTML = 15;
+	   document.getElementById('emp-silver').innerHTML = 15;
+	   document.getElementById('emp-gold').innerHTML = 15;
+	   document.getElementById('emp-diamond').innerHTML = 15;
+	   document.getElementById('emp-platinum').innerHTML = 15;
 
         $("#range_1").ionRangeSlider({
             min: 0,
             max: 500,
             from: 15,
             to: 500,
+            postfix: ' Employees',
             type: 'single',
             step: 1,
             onChange: function (obj) {      // callback is called on every slider change
                 console.log(obj);
                 document.getElementById('emp-silver').innerHTML = obj.fromNumber;
-                document.getElementById('emp-gold').innerHTML = obj.fromNumber;
-                document.getElementById('emp-diamond').innerHTML = obj.fromNumber;
-                document.getElementById('emp-platinum').innerHTML = obj.fromNumber;
+	            document.getElementById('emp-gold').innerHTML = obj.fromNumber;
+	            document.getElementById('emp-diamond').innerHTML = obj.fromNumber;
+	            document.getElementById('emp-platinum').innerHTML = obj.fromNumber;
                 if( obj.fromNumber<15){
                     var amt=0;
                 }
                 else{
                     var amt= obj.fromNumber-15;
                 }
+                document.getElementById('emp').value    = obj.fromNumber;
                 document.getElementById('amount').innerHTML =Math.round(699+(amt*7.5));
                 document.getElementById('amount1').innerHTML =1499+(amt*20);
                 document.getElementById('amount2').innerHTML =2499+(amt*30);
@@ -253,6 +262,44 @@
             hasGrid: true
         });
 
+   $(function(){
+
+    $('#emp').blur(function(){
+        var dat = document.getElementById('emp').value;
+         $("#range_1").ionRangeSlider("update",{
+            //from:'30'
+            obj: {
+                "input": dat,    // jQuery-link to input
+                //"slider": object,   // jQuery-link to slider container
+                //"min": 10,          // MIN value
+                //"max": 20,          // MAX value
+                "fromNumber": dat,   // FROM value
+                //"toNumber": 20,     // TO value
+                //"fromPers": 25,     // FROM value in percents
+               // "toPers": 75,       // TO value in percents
+                //"fromX": 100,       // x-coordinate of FROM-slider in pixels
+                //"toX": 200          // x-coordinate of TO-slider in pixels
+            }
+        });
+    });
+
+   $('#sliver').on("click",function(){
+       $('#sliver').prop("href","signup.php?package=silver&&noofemp="+$('#emp-silver').html()+"&&amount="+$('#amount').html());
+       });
+
+  $('#gold').on("click",function(){
+   $('#gold').prop("href","signup.php?package=gold&&noofemp="+$('#emp-gold').html()+"&&amount="+$('#amount1').html());
+   });
+
+  $('#platinum').on("click",function(){
+   $('#platinum').prop("href","signup.php?package=platinum&&noofemp="+$('#emp-platinum').html()+"&&amount="+$('#amount2').html());
+   });
+
+ $('#diamond').on("click",function(){
+   $('#diamond').prop("href","signup.php?package=diamond&&noofemp="+$('#emp-diamond').html()+"&&amount="+$('#amount3').html());
+   });
+
+   });
     });
     </script>
   </body>

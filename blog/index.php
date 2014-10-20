@@ -130,7 +130,7 @@
                         </div>
                         <div class="col-lg-10 col-sm-10">
                             <div class="blog-img">
-                                <img src="blog-images/img1.jpg" alt="blog-post-image"/>
+                                <img src="<?php echo $post['img-url']; ?>" alt="blog-post-image"/>
                             </div>
 
                         </div>
@@ -148,7 +148,7 @@
                             </div>
                         </div>
                         <div class="col-lg-10 col-sm-10">
-                            <h1><a href="blog-detail.php?post_id=<?php echo $post['post_id']; ?>"><?php echo $post['post_title']; ?></a></h1>
+                            <h1><a href="<?php echo $post['url']; ?>"><?php echo $post['post_title']; ?></a></h1>
                             <p>
                               <?php 
                                   $content=$post['post_content'];
@@ -164,7 +164,7 @@
                                   echo $string;
                               ?>
                             </p>
-                            <a href="blog-detail.php?post_id=<?php echo $post['post_id']; ?>"  class="btn btn-danger">Continue Reading</a>
+                            <a href="<?php echo $post['url']; ?>"  class="btn btn-danger">Continue Reading</a>
                         </div>
                     </div>
                 </div>
@@ -208,7 +208,7 @@
                             {
                                 while ( $row = $result->fetch_object() ) 
                                 {
-                                    echo "<li><a href='tag_view.php?tag_id={$row->tag_id}'> <i class='fa fa-angle-right'></i> {$row->tag_name} </a></li>";
+                                    echo "<li><a href='{$row->tag_name}'> <i class='fa fa-angle-right'></i> {$row->tag_name} </a></li>";
                                 }
                             } 
                             else 
@@ -234,7 +234,7 @@
 
                         <div class="media">
                             <div class="media-body">
-                                <h5 class="media-heading"><a href='blog-detail.php?post_id=<?php echo "{$row->post_id}"; ?>'><?php echo "{$row->post_title}"; ?></a></h5>
+                                <h5 class="media-heading"><a href='<?php echo "{$row->url}"; ?>'><?php echo "{$row->post_title}"; ?></a></h5>
                                 <p>
                                 </p>
                             </div>
@@ -262,7 +262,7 @@
                             while($que = mysqli_fetch_row($query))
                             {
                         ?>
-                        <li><a href="tag-view.php?tag_id=<?php echo $que['0']; ?>"><?php $related_tag_id = $que['0']; echo ucfirst($que['1']); ?></a></li>
+                        <li><a href="<?php echo $que['1']; ?>"><?php $related_tag_id = $que['0']; echo ucfirst($que['1']); ?></a></li>
                         <?php
                             }
                         ?>

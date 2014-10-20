@@ -10,7 +10,7 @@
     <meta name="author" content="Bass PRIS"/>
     <meta name="publisher" content="Bass Desio"/>
     <meta name="copyright" content="Bass PRIS"/>
-    <meta http-equiv="Reply-to" content=antony@basspris.com/>
+    <meta http-equiv="Reply-to" content="antony@basspris.com"/>
     <meta name="creation_Date" content="12/06/2011"/>
     <meta name="expires" content="11 June 2222"/>
     <meta name="language" content="EN"/>
@@ -89,10 +89,48 @@
             <div class="col-lg-9 ">
                 <?php
                   require 'blog-function.php';
-                  $query = "Select * FROM article ORDER BY post_date DESC ";
-                  $posts = get_posts($query);
-                  foreach($posts as $post)
+                  require ('../db-connect.php');
+                  $tag_name = $_GET['tag_name'];
+                
+                  $tag_name = $_GET['tag_name'];
+                  $query= "select * from article_tag where tag_name= '$tag_name' ";
+                  $result = $sql->query($query);
+                  if ( $result->num_rows > 0 ) 
                   {
+                     while ( $row = $result->fetch_object() ) 
+                     {
+                        $tag_id = $row->tag_id;
+                     }
+                  } 
+                  else 
+                  {
+                     echo 'There are no results to display.';
+                  } 
+
+                  $num_rec_per_page=5;
+                  if (isset($_GET["page"])) 
+                    { 
+                        $page  = $_GET["page"]; 
+                    } 
+                    else 
+                    { 
+                        $page=1; 
+                    } 
+                  $start_from = ($page-1) * $num_rec_per_page; 
+
+                  echo "<h4>Posts under <strong>"."'".$tag_name."'"."</strong> category</h4><br>";
+
+                  $query= "select post_id from article_tag_map where tag_id=$tag_id ";
+
+                  $posts = get_posts($query); 
+                     foreach($posts as $post)
+                      {
+                        $id = $post['post_id'];
+
+                        $query = "Select * FROM article where post_id = $id ORDER BY post_date DESC LIMIT $start_from, $num_rec_per_page";
+                        $posts = get_posts($query);
+                        foreach($posts as $post)
+                        {
                 ?>
                 <div class="blog-item">
                     <div class="row">
@@ -120,7 +158,7 @@
                         </div>
                         <div class="col-lg-10 col-sm-10">
                             <div class="blog-img">
-                                <img src="blog-images/img1.jpg" alt="blog-post-image"/>
+                                <img src="<?php echo $post['img-url']; ?>" alt="blog-post-image"/>
                             </div>
 
                         </div>
@@ -138,7 +176,7 @@
                             </div>
                         </div>
                         <div class="col-lg-10 col-sm-10">
-                            <h1><a href="blog-detail.php?post_id=<?php echo $post['post_id']; ?>"><?php echo $post['post_title']; ?></a></h1>
+                            <h1><a href="<?php echo $post['url']; ?>"><?php echo $post['post_title']; ?></a></h1>
                             <p>
                               <?php 
                                   $content=$post['post_content'];
@@ -154,23 +192,32 @@
                                   echo $string;
                               ?>
                             </p>
-                            <a href="blog-detail.php?post_id=<?php echo $post['post_id']; ?>"  class="btn btn-danger">Continue Reading</a>
+                            <a href="<?php echo $post['url']; ?>"  class="btn btn-danger">Continue Reading</a>
                         </div>
                     </div>
                 </div>
+                
                 <?php
+                    }
                   }
                 ?>
-
+                
                 <div class="text-center">
                     <ul class="pagination">
-                        <li><a href="#">«</a></li>
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">»</a></li>
+                    <?php 
+                        require('../db-connect.php');
+                        $query = "Select * FROM article where post_id = $id"; 
+                        $result = $sql->query($query); //run the query
+                        $total_records = $result->num_rows;  //count number of records
+                        $total_pages = ceil($total_records / $num_rec_per_page); 
+
+                        echo "<li><a href='tag-result-1'>".'«'."</a></li>"; // Goto 1st page  
+
+                        for ($i=1; $i<=$total_pages; $i++) { 
+                                    echo "<li><a href='tag-result-".$i."'>".$i."</a></li>"; 
+                        }
+                        echo "<li><a href='tag-result-$total_pages'>".'»'."</a></li>"; // Goto last page
+                    ?>   
                     </ul>
                 </div>
 
@@ -191,7 +238,7 @@
                             {
                                 while ( $row = $result->fetch_object() ) 
                                 {
-                                    echo "<li><a href='tag_view.php?tag_id={$row->tag_id}'> <i class='fa fa-angle-right'></i> {$row->tag_name} </a></li>";
+                                    echo "<li><a href='{$row->tag_name}'> <i class='fa fa-angle-right'></i> {$row->tag_name} </a></li>";
                                 }
                             } 
                             else 
@@ -217,7 +264,7 @@
 
                         <div class="media">
                             <div class="media-body">
-                                <h5 class="media-heading"><a href='blog-detail.php?post_id=<?php echo "{$row->post_id}"; ?>'><?php echo "{$row->post_title}"; ?></a></h5>
+                                <h5 class="media-heading"><a href='<?php echo "{$row->url}"; ?>'><?php echo "{$row->post_title}"; ?></a></h5>
                                 <p>
                                 </p>
                             </div>
@@ -245,26 +292,11 @@
                             while($que = mysqli_fetch_row($query))
                             {
                         ?>
-                        <li><a href="tag-view.php?tag_id=<?php echo $que['0']; ?>"><?php $related_tag_id = $que['0']; echo ucfirst($que['1']); ?></a></li>
+                        <li><a href="<?php echo $que['1']; ?>"><?php $related_tag_id = $que['0']; echo ucfirst($que['1']); ?></a></li>
                         <?php
                             }
                         ?>
                         </ul>
-                    </div>
-
-
-                    <div class="archive">
-                        <h3>Archive</h3>
-                        <ul class="list-unstyled">
-                            <li><a href="javascript:;"><i class="  fa fa-angle-right"></i> May 2013</a></li>
-                            <li><a href="javascript:;"><i class="  fa fa-angle-right"></i> April 2013</a></li>
-                            <li><a href="javascript:;"><i class="  fa fa-angle-right"></i> March 2013</a></li>
-                            <li><a href="javascript:;"><i class="  fa fa-angle-right"></i> February 2013</a></li>
-                            <li><a href="javascript:;"><i class="  fa fa-angle-right"></i> January 2013</a></li>
-                        </ul>
-                    </div>
-
-
                 </div>
             </div>
 

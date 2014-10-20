@@ -59,7 +59,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-sm-4">
-                    <h1>Blog Details</h1>
+                    <h1>Blog</h1>
                 </div>
                 <div class="col-lg-8 col-sm-8">
                     <ol class="breadcrumb pull-right">
@@ -75,38 +75,32 @@
     <!--container start-->
     <div class="container">
         <div class="row">
-         <?php
-
-                  require 'blog-function.php';
-
-                  $post_id = $_GET['post_id'];
-                  $url  = $_GET['url'].'.html';
-
-/*                  $query= "select * from article where post_id=$post_id ";
-*/
-                    $query= "select * from article where url= '$url' ";
-
-
-                  $posts = get_posts($query);
-
-                     foreach($posts as $post)
-                      {
-
-
-                ?>
+             <?php
+                require 'blog-function.php';
+                $url  = $_GET['url'].'.html';
+                $query= "select * from article where url= '$url' ";
+                $posts = get_posts($query);
+                foreach($posts as $post)
+                    {
+                        $post_id = $post['post_id'];
+            ?>
             <!--blog start-->
             <div class="col-lg-9">
                 <div class="blog-item">
                     <div class="row">
                         <div class="col-lg-2 col-sm-2">
                             <div class="date-wrap">
-                                <span class="date">  <?php $timestamp = $post['post_date'];
-
-                    echo $data = date('d',strtotime($timestamp)); ?> </span>
-                             <span class="month">       <?php
-                    $timestamp = $post['post_date'];
-
-                    echo $data = date('F',strtotime($timestamp)); ?> </span>
+                                <span class="date">  
+                                <?php 
+                                    $timestamp = $post['post_date'];
+                                    echo $data = date('d',strtotime($timestamp)); 
+                                ?> 
+                                </span>
+                                <span class="month">
+                                <?php
+                                    $timestamp = $post['post_date'];
+                                    echo $data = date('F',strtotime($timestamp)); ?> 
+                                </span>
                             </div>
                             <div class="comnt-wrap">
                                 <span class="comnt-ico">
@@ -117,9 +111,8 @@
                         </div>
                         <div class="col-lg-10 col-sm-10">
                             <div class="blog-img">
-                                <img src="../img/blog/img1.jpg" alt=""/>
+                                <img src="<?php echo $post['img-url']; ?>" alt=""/>
                             </div>
-
                         </div>
                     </div>
                     <div class="row">
@@ -130,14 +123,13 @@
                             <ul class="list-unstyled">
                                 <?php
                                     include '../db-connect.php';
-                                    $post_id = $_GET['post_id'];
                                     $related_tag_id = '0';
                                     $query= mysqli_query($con,"select t.tag_id,t.tag_name from article_tag_map tm join article p on p.post_id = tm.post_id join article_tag t on t.tag_id = tm.tag_id where p.post_id = '$post_id'");
                                     while($que = mysqli_fetch_row($query))
                                     {
                                 ?>
                                 <li>
-                                <a href="tag-view.php?tag_id=<?php echo $que['0']; ?>"><em><?php $related_tag_id = $que['0']; echo ucfirst($que['1']); ?></em></a>
+                                <a href="<?php echo $que['1']; ?>"><em><?php $related_tag_id = $que['0']; echo ucfirst($que['1']); ?></em></a>
                                 </li>
                                 <?php
                                     }
@@ -192,7 +184,7 @@
                             {
                                 while ( $row = $result->fetch_object() ) 
                                 {
-                                    echo "<li><a href='tag_view.php?tag_id={$row->tag_id}'> <i class='fa fa-angle-right'></i> {$row->tag_name} </a></li>";
+                                    echo "<li><a href='{$row->tag_name}'> <i class='fa fa-angle-right'></i> {$row->tag_name} </a></li>";
                                 }
                             } 
                             else 
@@ -218,7 +210,7 @@
 
                         <div class="media">
                             <div class="media-body">
-                                <h5 class="media-heading"><a href='blog-detail.php?post_id=<?php echo "{$row->post_id}"; ?>'><?php echo "{$row->post_title}"; ?></a></h5>
+                                <h5 class="media-heading"><a href='<?php echo "{$row->url}"; ?>'><?php echo "{$row->post_title}"; ?></a></h5>
                                 <p>
                                 </p>
                             </div>
@@ -240,13 +232,12 @@
                         <ul class="list-unstyled tag">
                         <?php
                             include '../db-connect.php';
-                            $post_id = $_GET['post_id'];
                             $related_tag_id = '0';
                             $query= mysqli_query($con,"select t.tag_id,t.tag_name from article_tag_map tm join article p on p.post_id = tm.post_id join article_tag t on t.tag_id = tm.tag_id");
                             while($que = mysqli_fetch_row($query))
                             {
                         ?>
-                        <li><a href="tag-view.php?tag_id=<?php echo $que['0']; ?>"><?php $related_tag_id = $que['0']; echo ucfirst($que['1']); ?></a></li>
+                        <li><a href="<?php echo $que['1']; ?>"><?php $related_tag_id = $que['0']; echo ucfirst($que['1']); ?></a></li>
                         <?php
                             }
                         ?>
