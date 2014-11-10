@@ -4,14 +4,14 @@ var EditableTable = function () {
 
         //main function to initiate the module
         init: function () {
-
-
+         
+		 
 
           // jQuery('#editable-sample_wrapper .dataTables_filter input').addClass("form-control medium"); // modify table search input
           // jQuery('#editable-sample_wrapper .dataTables_length select').addClass("form-control xsmall"); // modify table per page dropdown
 
-
-
+		   
+		 
 
 
 
@@ -40,16 +40,16 @@ var EditableTable = function () {
                     [5, 15, 20, -1],
                     [5, 15, 20, "All"] // change per page values here
                 ],
-
+				
                 // set the initial value
                 "iDisplayLength": 5,
                 "sDom": "<'row'<'col-lg-6'l><'col-lg-6'f>r>t<'row'<'col-lg-6'i><'col-lg-12'T><'col-lg-6'p>>",
-
+				
 				"bProcessing": true,
 		"bServerSide": true,
 		"sAjaxSource": "script/blog_view.php",
 		"sServerMethod": "POST",
-
+	  
          "sPaginationType": "bootstrap",
          "oLanguage": {
          "sLengthMenu": "_MENU_ records per page",
@@ -61,24 +61,22 @@ var EditableTable = function () {
 				"oColReorder": {
                         "iFixedColumns": 1
                     },
-				 "aoColumns": [                           //Row control
+				"aoColumns": [                           //Row control
                         { "sName": "button", "bSortable": false, "sWidth": "5%"},
                         { "sName": "post_id", "sWidth": "10%"},
                         { "sName": "post_title", "sWidth": "45%"},
-                                    { "sName": "author", "sWidth": "20%"},
-                                    { "sName": "post_date", "sWidth": "15%"}
-
-
-
+						            { "sName": "author", "sWidth": "20%"},
+						            { "sName": "post_date", "sWidth": "15%"}
+						
                     ],
 					"oColVis": {
 			"aiExclude": [ 0 ]
 		},
 					"oTableTools": {
             "aButtons": [
-
+                
              ]
-
+		
 		}
           });
 
@@ -101,9 +99,9 @@ var EditableTable = function () {
                   oTable.fnOpen( nTr, fnFormatDetails(oTable, nTr), 'details' );
               }
           } );
-
-
-
+		  
+		  
+		  
 		  function fnFormatDetails ( oTable, nTr )
       {
           var aData = oTable.fnGetData( nTr );
@@ -113,13 +111,15 @@ var EditableTable = function () {
           sOut += '<tr valign="top"><td width="10%"><b>Tags</b></td><td width="100%">'+aData[6]+'</td></tr>';
 	  sOut += '<tr valign="top"><td width="10%"><b>Keywords</b></td><td width="100%">'+aData[8]+'</td></tr>';
           sOut += '<tr valign="top"><td width="10%"><b>Description</b></td><td width="100%">'+aData[9]+'</td></tr>';
+          sOut += '<tr valign="top"><td width="10%"><b>URL</b></td><td width="100%">'+aData[10]+'</td></tr>';
+          sOut += '<tr valign="top"><td width="10%"><b>Image URL</b></td><td width="100%">'+aData[11]+'</td></tr>';
           sOut += '<tr valign="top"><td><b>Ref Id - </b>'+aData[1]+'</td><td><a href="#edit_blog" class="edit" data-toggle="modal"><button type="button" class="btn btn-success btn-sm"><i class="fa fa-pencil"></i> Edit</button></a></td><td><a href="" class="delete" data-toggle="modal"><button type="button" class="btn btn-success btn-sm"><i class="fa fa-trash-o"></i> Delete</button></a></td></tr>';
           sOut += '</table>';
 
           return sOut;
       }
-
-
+    
+   		
 		$('#blog_table a.edit').live('click', function (e) {
                 e.preventDefault();
 		var nTr = $(this).parents('tr')[0];
@@ -148,9 +148,9 @@ var EditableTable = function () {
 						});
 						 //ms.empty();
 						}
-
+                    
                 	} );
-
+			 
 		});
 
 
@@ -174,23 +174,23 @@ var EditableTable = function () {
 					    if(msg == "success")
 					    {
 					    //alert("Deleted Successfully!");
-					    //oTable.fnDeleteRow( nTr );
+					    //oTable.fnDeleteRow( nTr );    
 					    oTable.fnDraw();
 					    //location.reload(true);
 					    }
-					    else
+					    else  
 					    {
 					      //location.reload(true);
 					    //alert("Faild !");
 					    oTable.fnDraw();
 					    }
-			     }
-		        } );
-
+			     }       
+		        } );  
+				   
 		});
 
 
-
+				
 		$('#blog_detail').on('submit',function(e) {
 		e.preventDefault();
 		var messageLength = CKEDITOR.instances['post_contents'].getData();
@@ -213,13 +213,13 @@ var EditableTable = function () {
 				    alert("Updated Successfully!");
 				    oTable.fnDraw();
 				    }
-				    else
+				    else  
 				    alert("Failed to Update!");
 			    }
-
-		    } );
+		            
+		    } );  	
 		}
-
+			
 		});
 
       $('#new_post_detail').on('submit',function(e) {
@@ -233,25 +233,32 @@ var EditableTable = function () {
 		for (instance in CKEDITOR.instances) {
 		    CKEDITOR.instances[instance].updateElement();
 		}
+		var formData = new FormData($("#new_post_detail")[0]);
 		jQuery.ajax( {
                     type: "POST",
                     url: $(this).attr("action"),
+                    processData: false,
+                    contentType: false,
                     cache: false,
-                    data: $(this).serialize(),
+                    data: formData,
           	    success: function(msg) {
 			    if(msg == "success")
 			    {$('.close').click()
 			    alert("Post Published!");
 			    oTable.fnDraw();
 			    }
-			    else
+			    else if(msg == 'empty')
+			    {
+			    	alert("Please Enter Tag !");
+			    }
+			    else  
 			    alert("Publish Failed!");
 		    }
-
-            } );
+                    
+            } );  	
 	}
     });
-
+			
  }
 
     };
