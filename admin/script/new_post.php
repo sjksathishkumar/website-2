@@ -1,78 +1,119 @@
 <?php
-
+ 
 error_reporting();
 include_once("../include/config.php");
 
 //getting all input given from user
 
-     if(empty($_POST['post_tag']))
+
+/*if(empty($_POST['post_tag']))
 {
-    echo "Transaction Faild";
+    echo "empty";
     break;
 }
 else
-{
+{*/
+    $post_title = $_POST['post_title'];
+    $post_content = $_POST['post_content'];
+    $post_keywords = $_POST['post_keywords'];
+    $post_description = $_POST['post_description'];
+    $image_url = $_FILES['image_url'];
+    $tags = isset($_POST['post_tag']) ? $_POST['post_tag'] : array();
 
-    //echo "Post Tilte - ".$post_title."<br>";
-    //echo "Post Keywords - ".$post_keywords."<br>";
-    //echo "Post Description - ".$post_description."<br>";
-    //echo "Proceed with transaction.";
-//INSERT INTO `bassbiz1_data`.`article` (`post_id`, `author`, `post_title`, `post_content`, `keyword`, `description`, `post_date`) VALUES (NULL, 'Admin', 'title', 'content', 'bassbiz', 'description', '2014-07-17 07:32:50');
+    //echo "$image_url";
 
-$post_title = $_POST['post_title'];
-$post_content = $_POST['post_content'];
-$post_keywords = $_POST['post_keywords'];
-$post_description = $_POST['post_description'];
-$tags = isset($_POST['post_tag']) ? $_POST['post_tag'] : array();
+    $img = basename($_FILES['image_url']['name']); 
 
-$query = "INSERT INTO `article` (`post_id`, `author`, `post_title`, `post_content`, `keyword`, `description`, `post_date`) VALUES (NULL, 'Admin', '$post_title', '$post_content', '$post_keywords', '$post_description', CURRENT_TIMESTAMP);";
-
-$result = $sql->query($query);
-
-$last_post_id = $sql->insert_id;
+    echo "$img";
 
 
-foreach ($tags as $tag) {
-
-    if(!is_numeric($tag))
+   /* if(isset($_FILES["image_url"]) && $_FILES["image_url"]["error"]== UPLOAD_ERR_OK)
     {
-        $query = "INSERT INTO `article_tag` (`tag_id`, `tag_name`) VALUES (NULL, '$tag')";
+        ############ Edit settings ##############
+        $UploadDirectory    = 'resume/'; //specify upload directory ends with / (slash)
+        ##########################################
+        //check if this is an ajax request*/
+        /*if (!isset($_SERVER['HTTP_X_REQUESTED_WITH'])){
+            die();
+        }
+        
+        
+        $File_Name          = strtolower($_FILES['image_url']['name']);
+        $File_Ext           = substr($File_Name, strrpos($File_Name, '.')); //get file extention
+        $Random_Number      = rand(0, 9999999999); //Random number to be added to name.
+        $NewFileName        = $Random_Number.$File_Ext; //new file name
+        $path               = $UploadDirectory.$NewFileName; // Full path for file
 
-        $result = $sql->query($query);
+        echo "test $path";*/
+   // }
 
-        $last_tag_id = $sql->insert_id;
+    $title=htmlentities($post_title);
 
-        //echo "Last Inserted tag_ID :".$last_tag_id;
+    //Title to friendly URL conversion
 
-        //echo "Last Inserted post_id".$last_post_id;
-
-        $query = "INSERT INTO `article_tag_map` (`tag_id`, `post_id`) VALUES ($last_tag_id, $last_post_id)";
-
-        $result = $sql->query($query);
-
+    function string_limit_words($string, $word_limit)
+    {
+      $words = explode(' ', $string, ($word_limit + 1));
+      if(count($words) > $word_limit)
+      array_pop($words);
+      return implode(' ', $words);
     }
+
+    $newtitle = string_limit_words($title,6);
+
+    $urltitle=preg_replace('/[^a-z0-9]/i',' ', $newtitle);
+
+    $newurltitle=str_replace(" ","-",$urltitle);
+
+    $newurltitle = rtrim($newurltitle , '-');
+
+    $url=$newurltitle.'.html'; // Final URL
+
+    $url = strtolower($url);
+
+    echo "$post_title<br>$post_content<br>$post_keywords<br>$post_description<br>$path<br>$url";
+
+   /* $query = "INSERT INTO `article` (`post_id`, `author`, `post_title`, `post_content`, `keyword`, `description`, `url`, `post_date`) VALUES (NULL, 'Admin', '$post_title', '$post_content', '$post_keywords', '$post_description', '$url', CURRENT_TIMESTAMP);";
+
+    $result = $sql->query($query);
+
+    $last_post_id = $sql->insert_id;
+
+
+    foreach ($tags as $tag) {
+
+        if(!is_numeric($tag))
+        {
+            $query = "INSERT INTO `article_tag` (`tag_id`, `tag_name`) VALUES (NULL, '$tag')";
+
+            $result = $sql->query($query);
+
+            $last_tag_id = $sql->insert_id;
+
+            $query = "INSERT INTO `article_tag_map` (`tag_id`, `post_id`) VALUES ($last_tag_id, $last_post_id)";
+
+            $result = $sql->query($query);
+
+        }
+        else
+        {
+            $query = "INSERT INTO `article_tag_map` (`tag_id`, `post_id`) VALUES ($tag, $last_post_id)";
+
+            $result = $sql->query($query);
+
+        }
+    }*/
+
+   /* if($result)
+    {
+        echo 'success';
+        $sql->close();
+    }   
     else
-    {
-        //echo "Last Inserted post_id".$last_post_id;
-
-        $query = "INSERT INTO `article_tag_map` (`tag_id`, `post_id`) VALUES ($tag, $last_post_id)";
-
-        $result = $sql->query($query);
-
+    { 
+        echo 'error';  
     }
-}
 
-
-if($result)
-{
-    echo 'success';
-	$sql->close();
-}
-else
-{
-    echo 'error';
-}
-
-}
+}*/
 
 ?>
