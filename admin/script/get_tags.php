@@ -1,5 +1,5 @@
 <?php
-    $mysql = new mysqli('localhost','bassbiz1_bt','Bass2014!','bassbiz1_data');
+    $mysql = new mysqli('localhost','basspris_prisadm','Bass1987$','basspris_bassadmin');
     $result = $mysql->query("select * from article_tag");
     $rows = array();
     while($row = $result->fetch_array(MYSQL_ASSOC)) {

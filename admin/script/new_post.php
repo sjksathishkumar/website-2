@@ -6,13 +6,13 @@ include_once("../include/config.php");
 //getting all input given from user
 
 
-/*if(empty($_POST['post_tag']))
+if(empty($_POST['post_tag']))
 {
     echo "empty";
     break;
 }
 else
-{*/
+{
     $post_title = $_POST['post_title'];
     $post_content = $_POST['post_content'];
     $post_keywords = $_POST['post_keywords'];
@@ -20,20 +20,13 @@ else
     $image_url = $_FILES['image_url'];
     $tags = isset($_POST['post_tag']) ? $_POST['post_tag'] : array();
 
-    //echo "$image_url";
-
-    $img = basename($_FILES['image_url']['name']); 
-
-    echo "$img";
-
-
-   /* if(isset($_FILES["image_url"]) && $_FILES["image_url"]["error"]== UPLOAD_ERR_OK)
+    if(isset($_FILES["image_url"]) && $_FILES["image_url"]["error"]== UPLOAD_ERR_OK)
     {
         ############ Edit settings ##############
-        $UploadDirectory    = 'resume/'; //specify upload directory ends with / (slash)
+        $UploadDirectory    = '../../blog/blog-images/'; //specify upload directory ends with / (slash)
         ##########################################
-        //check if this is an ajax request*/
-        /*if (!isset($_SERVER['HTTP_X_REQUESTED_WITH'])){
+        //check if this is an ajax request
+        if (!isset($_SERVER['HTTP_X_REQUESTED_WITH'])){
             die();
         }
         
@@ -44,8 +37,9 @@ else
         $NewFileName        = $Random_Number.$File_Ext; //new file name
         $path               = $UploadDirectory.$NewFileName; // Full path for file
 
-        echo "test $path";*/
-   // }
+    }
+
+    move_uploaded_file($_FILES['image_url']['tmp_name'], $path );
 
     $title=htmlentities($post_title);
 
@@ -71,49 +65,49 @@ else
 
     $url = strtolower($url);
 
-    echo "$post_title<br>$post_content<br>$post_keywords<br>$post_description<br>$path<br>$url";
-
-   /* $query = "INSERT INTO `article` (`post_id`, `author`, `post_title`, `post_content`, `keyword`, `description`, `url`, `post_date`) VALUES (NULL, 'Admin', '$post_title', '$post_content', '$post_keywords', '$post_description', '$url', CURRENT_TIMESTAMP);";
+    $query = "INSERT INTO `article` (`post_id`, `author`, `post_title`, `post_content`, `keyword`, `description`, `url`, `img_url`, `post_date`) VALUES (NULL, 'Admin', '$post_title', '$post_content', '$post_keywords', '$post_description', '$url', '$path', CURRENT_TIMESTAMP);";
 
     $result = $sql->query($query);
 
     $last_post_id = $sql->insert_id;
 
-
     foreach ($tags as $tag) {
 
         if(!is_numeric($tag))
         {
+
             $query = "INSERT INTO `article_tag` (`tag_id`, `tag_name`) VALUES (NULL, '$tag')";
 
             $result = $sql->query($query);
 
             $last_tag_id = $sql->insert_id;
 
-            $query = "INSERT INTO `article_tag_map` (`tag_id`, `post_id`) VALUES ($last_tag_id, $last_post_id)";
+            $query = "INSERT INTO `article_tag_map` (`id`, `tag_id`, `post_id`) VALUES (NULL, '$last_tag_id', '$last_post_id')";
 
             $result = $sql->query($query);
 
         }
         else
         {
-            $query = "INSERT INTO `article_tag_map` (`tag_id`, `post_id`) VALUES ($tag, $last_post_id)";
+
+            $query = "INSERT INTO `article_tag_map` (`id`, `tag_id`, `post_id`) VALUES (NULL, '$tag', '$last_post_id')";
 
             $result = $sql->query($query);
 
         }
-    }*/
+    }
 
-   /* if($result)
+    if($result)
     {
         echo 'success';
         $sql->close();
     }   
     else
     { 
-        echo 'error';  
+        echo 'error'; 
+        $sql->close();
     }
 
-}*/
+}
 
 ?>
