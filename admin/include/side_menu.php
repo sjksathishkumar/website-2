@@ -11,9 +11,12 @@
 
                   <li class="sub-menu">
                       <a  href="blog_view.php"><i class="fa fa-book"></i><span>Blog</span></a>
-                 </li>
+                  </li>
                   <li class="sub-menu">
-                      <a  href="user_view.php"><i class="fa fa-user"></i><span>User</span></a>
+                      <a  href="enquiry_view.php"><i class="fa fa-phone"></i><span>Enquiry</span></a>
+                  </li>
+                  <li class="sub-menu">
+                      <a  href="contact_view.php"><i class="fa fa-user"></i><span>Contact</span></a>
                  </li>
                  <li class="sub-menu">
                       <a  href="tutorial_view.php"><i class="fa fa-file-text"></i><span>Tutorial</span></a>
