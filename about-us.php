@@ -17,7 +17,7 @@
     <meta name="rating" content="general"/>
     <meta name="revisit-after" content="7 days"/>
 
-    <title>Bass PRIS | Payroll and Recruitment Information System | Payroll and Recruitment outsource service provider </title>
+    <title>About Us | Bass PRIS | Payroll and Recruitment Information System | Payroll and Recruitment outsource service provider </title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
