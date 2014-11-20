@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; iso-8859-1"/>
     <meta name="ROBOTS" content="INDEX, FOLLOW"/>
     <meta name="description" content="Bass PRIS provides you a fully fledged support from preparing CTC to final settlement. Bass PRIS will help in terms of preparation of pay structure, pay slip, MIS report and compliance report"/>
-    <meta name="keywords" content=“Payroll outsourcing, payroll consultant, payroll team, payroll advisor, payroll sourcing, Bass PRIS"/>
+    <meta name="keywords" content="Payroll outsourcing, payroll consultant, payroll team, payroll advisor, payroll sourcing, Bass PRIS"/>
     <meta name="author" content="Bass PRIS"/>
     <meta name="publisher" content="Bass Desio"/>
     <meta name="copyright" content="Bass PRIS"/>
