@@ -7,7 +7,7 @@
     <meta http-equiv="Content-Type" content="text/html; iso-8859-1"/>
     <meta name="ROBOTS" content="INDEX, FOLLOW"/>
     <meta name="description" content="Bass PRIS provides you a fully automated and customized cloud based payroll solution and it has facility to export reports"/>
-    <meta name="keywords" content=“Payroll information system, pris, payroll solution, payroll package, payroll software, payroll system on cloud, Bass PRIS"/>
+    <meta name="keywords" content="Payroll information system, pris, payroll solution, payroll package, payroll software, payroll system on cloud, Bass PRIS"/>
     <meta name="author" content="Bass PRIS"/>
     <meta name="publisher" content="Bass Desio"/>
     <meta name="copyright" content="Bass PRIS"/>
