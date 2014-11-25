@@ -17,7 +17,7 @@
     <meta name="rating" content="general"/>
     <meta name="revisit-after" content="7 days"/>
 
-    <title>Pricing | Bass PRIS, a payroll and recruitment information system at affordable price</title>
+    <title>Pricing | Bass PRIS, a payroll and recruitment information system at affordable price.</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
