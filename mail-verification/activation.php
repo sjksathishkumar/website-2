@@ -109,11 +109,11 @@
                     if(mysqli_num_rows($c) > 0)
                     {
 
-                    $count=mysqli_query($connection,"SELECT uid FROM enquiry WHERE activation='$code' and status='0'");
+                    $count=mysqli_query($connection,"SELECT uid FROM enquiry WHERE activation='$code' and status='notverified'");
 
                     if(mysqli_num_rows($count) == 1)
                     {
-                    mysqli_query($connection,"UPDATE enquiry SET status='1' WHERE activation='$code'");
+                    mysqli_query($connection,"UPDATE enquiry SET status='verified' WHERE activation='$code'");
                     echo "<h4>Your account is activated</h4>";   
                     }
                     else

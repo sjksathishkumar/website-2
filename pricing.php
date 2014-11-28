@@ -17,7 +17,7 @@
     <meta name="rating" content="general"/>
     <meta name="revisit-after" content="7 days"/>
 
-    <title>Pricing | Bass PRIS, a payroll and recruitment information system at affordable price.</title>
+    <title>Pricing | Bass PRIS, a payroll and recruitment information system at affordable price</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -264,22 +264,11 @@
 
    $(function(){
 
+
     $('#emp').blur(function(){
         var dat = document.getElementById('emp').value;
          $("#range_1").ionRangeSlider("update",{
             //from:'30'
-            obj: {
-                "input": dat,    // jQuery-link to input
-                //"slider": object,   // jQuery-link to slider container
-                //"min": 10,          // MIN value
-                //"max": 20,          // MAX value
-                "fromNumber": dat,   // FROM value
-                //"toNumber": 20,     // TO value
-                //"fromPers": 25,     // FROM value in percents
-               // "toPers": 75,       // TO value in percents
-                //"fromX": 100,       // x-coordinate of FROM-slider in pixels
-                //"toX": 200          // x-coordinate of TO-slider in pixels
-            }
         });
     });
 

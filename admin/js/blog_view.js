@@ -202,16 +202,27 @@ var EditableTable = function () {
 			for (instance in CKEDITOR.instances) {
 			    CKEDITOR.instances[instance].updateElement();
 			}
+			var formData = new FormData($("#blog_detail")[0]);
 			jQuery.ajax( {
 		            type: "POST",
 		            url: $(this).attr("action"),
-		            cache: false,
-		            data: $(this).serialize(),
+                    processData: false,
+                    contentType: false,
+                    cache: false,
+		            data: formData,
 		  	    success: function(msg) {
 				    if(msg == "success")
 				    {$('.close').click()
 				    alert("Updated Successfully!");
 				    oTable.fnDraw();
+				    }
+				    else if(msg == "empty")
+				    {
+				    	alert("Tas is empty !");
+				    }
+				    else if(msg == "file")
+				    {
+				    	alert("Please Select jpg/png file Only !")
 				    }
 				    else  
 				    alert("Failed to Update!");
@@ -250,6 +261,10 @@ var EditableTable = function () {
 			    else if(msg == 'empty')
 			    {
 			    	alert("Please Enter Tag !");
+			    }
+			    else if(msg == 'file')
+			    {
+			    	alert("Please Select valid File !");
 			    }
 			    else  
 			    alert("Publish Failed!");

@@ -1,7 +1,7 @@
 <?php
 include_once 'include_login/db_connect.php';
 include_once 'include_login/functions.php';
-
+ 
 sec_session_start();
 if (login_check($mysqli) == true) : ?>
 
@@ -93,7 +93,7 @@ if (login_check($mysqli) == true) : ?>
                      </div>
                      <div class="modal-body">
                       <section class="panel">
-                          <form role="form" id="new_post_detail" method="post" action="script/new_post.php">
+                          <form role="form" id="new_post_detail" method="post" action="script/new_post.php" enctype="multipart/form-data">
                                   <div>
                                     <label for="post_title"><b>Title</b></label>
                                     <input type="text" class="form-control" id="post_title" name="post_title" required>
@@ -104,17 +104,22 @@ if (login_check($mysqli) == true) : ?>
                                     <textarea class="ckeditor" cols="120" id="post_content" name="post_content" rows="15">
                                     </textarea>
                                   </div>
-				  <div>
-					<br>
+          <div>
+          <br>
                                     <label for="post_title"><b>Keywords</b></label>
                                     <input type="text" class="form-control" id="post_keywords" name="post_keywords" required>
                                   </div>
-				  <div>
-				   <br>
+          <div>
+           <br>
                                     <label for="post_title"><b>Description</b></label>
                                     <input type="text" class="form-control" id="post_description" name="post_description" required>
                                   </div>
-                                  <div>
+          <div>
+           <br>
+                                    <label for="image_url"><b>Image</b></label>
+                                    <input type="file" class="form-control" id="image_url" name="image_url" required>
+                                  </div>
+          <div>
                                     <br>
                                     <label for="post_tag"><b>Tags</b></label>
                                     <input type="text" class="form-control" id="tag" name="post_tag[]" required>
@@ -138,7 +143,7 @@ if (login_check($mysqli) == true) : ?>
                      </div>
                      <div class="modal-body">
                       <section class="panel">
-                          <form role="form" id="blog_detail" method="post" action="script/blog_update.php">
+                          <form role="form" id="blog_detail" method="post" action="script/blog_update.php" enctype="multipart/form-data">
                                   <div>
                                     <input id="post_id" name="post_id" type="hidden">
                                     <label for="post_title"><b>Title</b></label>
@@ -149,17 +154,32 @@ if (login_check($mysqli) == true) : ?>
                                     <label for="post_content"><b>Contents</b></label>
                                     <textarea id="post_contents" name="post_contents" class="ckeditor"></textarea>
                                   </div>
-				<div>
-					<br>
+        <div>
+          <br>
                                     <label for="post_title"><b>Keywords</b></label>
                                     <input type="text" class="form-control" id="post_keywords" name="post_keywords" required>
                                   </div>
-				  <div>
-				   <br>
+          <div>
+           <br>
                                     <label for="post_title"><b>Description</b></label>
                                     <input type="text" class="form-control" id="post_description" name="post_description" required>
                                   </div>
-                                  <div>
+       <div>
+           <br>
+                                    <label for="url"><b>URL</b></label>
+                                    <input type="text" class="form-control" id="url" name="url" required>
+                                  </div> 
+       <div>
+           <br>
+                                    <label for="img_url"><b>Image URL</b></label>
+                                    <input type="text" class="form-control" id="img_url" name="img_url" required readonly>
+                                  </div>
+       <div>
+           <br>
+                                    <label for="img_url_update"><b>Update Image</b></label>
+                                    <input type="file" class="form-control" id="img_url_update" name="img_url_update">
+                                  </div>                                
+      <div>
                                     <br>
                                     <label for="tags"><b>Tags</b></label>
                                     <!-- <input type="text" class="form-control" id="tags" name="tags[]" required> -->
@@ -198,7 +218,7 @@ if (login_check($mysqli) == true) : ?>
     <!--common script for all pages-->
     <script src="js/common-scripts.js"></script>
     <!--script for this page only-->
-
+    
     <script src="js/blog_view.js" > </script>
     <script src="assets/data-tables/TableTools.js"></script>
     <script src="assets/data-tables/ZeroClipboard.js"></script>
@@ -212,18 +232,18 @@ if (login_check($mysqli) == true) : ?>
     <!-- Script for magic fill -->
     <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>  -->
     <script src="js/magicsuggest.js"></script>
-    <script src="js/magic_script.js"></script>
+    <script src="js/magic_script.js"></script> 
 
-
+    
     <script type="text/javascript">
       /* Formating function for row details */
-
+      
       $(document).ready(function() {
                  EditableTable.init();
           /*
            * Insert a 'details' column to the table
            */
-
+         
       } );
 
 
@@ -233,6 +253,7 @@ if (login_check($mysqli) == true) : ?>
 
   </body>
 </html>
-<?php else :
+<?php else : 
         header('Location: index.php');
 endif; ?>
+  

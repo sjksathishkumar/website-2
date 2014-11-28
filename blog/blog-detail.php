@@ -3,12 +3,38 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="Mosaddek">
-    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <meta http-equiv="Content-Type" content="text/html; iso-8859-1"/>
+    <meta name="ROBOTS" content="INDEX, FOLLOW"/>
+    <meta name="author" content="Bass PRIS"/>
+    <meta name="publisher" content="Bass Desio"/>
+    <meta name="copyright" content="Bass PRIS"/>
+    <meta http-equiv="Reply-to" content="antony@basspris.com"/>
+    <meta name="creation_Date" content="12/06/2011"/>
+    <meta name="expires" content="11 June 2222"/>
+    <meta name="language" content="EN"/>
+    <meta name="rating" content="general"/>
+    <meta name="revisit-after" content="7 days"/>
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>BassPris  | Blog Details</title>
+    <?php
+
+        $url  = $_GET['url'].'.html';
+
+        require 'blog-function.php';
+
+        $query= "select * from article where url='$url'";
+
+        $result = $sql->query($query);
+
+        $row = $result->fetch_assoc();
+
+        echo "<meta name='description' content='".$row['description']."'/>";
+
+        echo "<meta name='keywords' content='".$row['keyword']."'/>";
+
+        echo "<title>".$row['post_title']."</title>";
+
+    ?> 
 
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -76,7 +102,6 @@
     <div class="container">
         <div class="row">
              <?php
-                require 'blog-function.php';
                 $url  = $_GET['url'].'.html';
                 $query= "select * from article where url= '$url' ";
                 $posts = get_posts($query);
@@ -111,7 +136,7 @@
                         </div>
                         <div class="col-lg-10 col-sm-10">
                             <div class="blog-img">
-                                <img src="<?php echo $post['img-url']; ?>" alt=""/>
+                                <img src="<?php echo $post['img_url']; ?>" alt=""/>
                             </div>
                         </div>
                     </div>
@@ -171,9 +196,6 @@
 
             <div class="col-lg-3">
                 <div class="blog-side-item">
-                    <div class="search-row">
-                        <input type="text" class="form-control" placeholder="Search here">
-                    </div>
                     <div class="category">
                         <h3>Categories</h3>
                         <ul class="list-unstyled">
@@ -232,17 +254,16 @@
                         <ul class="list-unstyled tag">
                         <?php
                             include '../db-connect.php';
-                            $related_tag_id = '0';
-                            $query= mysqli_query($con,"select t.tag_id,t.tag_name from article_tag_map tm join article p on p.post_id = tm.post_id join article_tag t on t.tag_id = tm.tag_id");
+                            $query= mysqli_query($con,"select * from article_tag");
                             while($que = mysqli_fetch_row($query))
                             {
                         ?>
-                        <li><a href="<?php echo $que['1']; ?>"><?php $related_tag_id = $que['0']; echo ucfirst($que['1']); ?></a></li>
+                        <li><a href="<?php echo $que['1']; ?>"><?php echo ucfirst($que['1']); ?></a></li>
                         <?php
                             }
                         ?>
                         </ul>
-                    </div>
+                </div>
 
                 </div>
             </div>

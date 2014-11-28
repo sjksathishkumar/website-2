@@ -158,7 +158,7 @@
                         </div>
                         <div class="col-lg-10 col-sm-10">
                             <div class="blog-img">
-                                <img src="<?php echo $post['img-url']; ?>" alt="blog-post-image"/>
+                                <img src="<?php echo $post['img_url']; ?>" alt="blog-post-image"/>
                             </div>
 
                         </div>
@@ -225,9 +225,6 @@
 
             <div class="col-lg-3">
                 <div class="blog-side-item">
-                    <div class="search-row">
-                        <input type="text" class="form-control" placeholder="Search here">
-                    </div>
                     <div class="category">
                         <h3>Categories</h3>
                         <ul class="list-unstyled">
@@ -280,19 +277,17 @@
                         ?>                    
 
                     </div>
-
+                    
                     <div class="tags">
                         <h3>Tags</h3>
                         <ul class="list-unstyled tag">
                         <?php
                             include '../db-connect.php';
-                            $post_id = $_GET['post_id'];
-                            $related_tag_id = '0';
-                            $query= mysqli_query($con,"select t.tag_id,t.tag_name from article_tag_map tm join article p on p.post_id = tm.post_id join article_tag t on t.tag_id = tm.tag_id");
+                            $query= mysqli_query($con,"select * from article_tag");
                             while($que = mysqli_fetch_row($query))
                             {
                         ?>
-                        <li><a href="<?php echo $que['1']; ?>"><?php $related_tag_id = $que['0']; echo ucfirst($que['1']); ?></a></li>
+                        <li><a href="<?php echo $que['1']; ?>"><?php echo ucfirst($que['1']); ?></a></li>
                         <?php
                             }
                         ?>

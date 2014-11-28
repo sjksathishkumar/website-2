@@ -44,10 +44,32 @@
   </head>
 
   <body>
-     <!--header start-->
-    <?php
-     include 'header.php';
-     ?>
+ <!--header start-->
+    <header class="header-frontend">
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="fa fa-bar"></span>
+                        <span class="fa fa-bar"></span>
+                        <span class="fa fa-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.php">Bass<span>Pris</span></a>
+                </div>
+                <div class="navbar-collapse collapse ">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="about-us.php">About</a></li>
+                        <li class="active"><a href="services.php">Services</a></li>
+                        <li><a href="tutorials.php">Tutorials</a></li>
+                        <li><a href="pricing.php">Pricing</a></li>
+                        <li><a href="/blog/index.php">Blog</a></li>
+                        <li><a href="contact-us.php">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
     <!--header end-->
 
     <!--breadcrumbs start-->
@@ -59,8 +81,7 @@
                 </div>
                 <div class="col-lg-8 col-sm-8">
                     <ol class="breadcrumb pull-right">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Pages</a></li>
+                        <li><a href="index.php">Home</a></li>
                         <li class="active">Payrollout</li>
                     </ol>
                 </div>

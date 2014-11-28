@@ -54,7 +54,7 @@
                         <li><a href="services.php">Services</a></li>
                         <li><a href="tutorials.php">Tutorials</a></li>
                         <li><a href="pricing.php">Pricing</a></li>
-                        <li><a href="blog.php">Blog</a></li>
+                        <li><a href="/blog/index.php">Blog</a></li>
                         <li><a href="contact-us.php">Contact</a></li>
                     </ul>
                 </div>
@@ -118,7 +118,7 @@
                     <h3>Dropcap</h3>
                     <p align="justify">
                         <span class="dropcap2">F</span>
-                        Lorem ipsum dolor sit amet,.... consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales at. Nulla tellus elit, varius non commodo eget, mattis vel eros. In sed ornare nulla. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare dolor, quis ullamcorper ligula sodales at. Nulla tellus elit, varius non commodo eget, mattis vel eros. In sed ornare nulla. Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula ut.
                     </p>
                 </div>
             </div>

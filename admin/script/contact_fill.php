@@ -2,13 +2,13 @@
 
 error_reporting();
 include_once("../include/config.php");
-$aColumns = array('post_id', 'post_title', 'author', 'post_date', 'post_content', 'url', 'img_url', 'tag_name', 'tag_id', 'keyword', 'description');
+$aColumns = array('id', 'name', 'status');
 
 /* Indexed column (used for fast and accurate table cardinality) */
-$sIndexColumn = "post_id";
+$sIndexColumn = "id";
 
 /* DB table to use */
-$sTable = "temp";
+$sTable = "contact";
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * If you just want to use the basic configuration for DataTables with PHP server-side, there is
  * no need to edit below this line
@@ -23,11 +23,11 @@ function fatal_error ( $sErrorMessage = '' )
     die( $sErrorMessage );
 }
 
-$query = "CREATE TEMPORARY TABLE IF NOT EXISTS temp AS ( select DISTINCT p.post_id,p.post_title,p.author,p.post_date,p.post_content,p.url,p.img_url,p.keyword,p.description,GROUP_CONCAT(DISTINCT t.tag_name) as tag_name, GROUP_CONCAT(DISTINCT t.tag_id) as tag_id from article_tag_map tm join article p on p.post_id = tm.post_id join article_tag t on t.tag_id = tm.tag_id GROUP BY p.post_id)";
+$query = "SELECT * FROM `contact`";
 $rResult = $sql->query($query);
 
 $sWhere = "WHERE ";
-$sWhere .= "`post_id` = '".$sql->real_escape_string($_POST['post_id'])."' ";
+$sWhere .= "`id` = '".$sql->real_escape_string($_POST['id'])."' ";
 
 /*
  * SQL queries
@@ -40,18 +40,13 @@ $sQuery = "
     ";
 $rResult = $sql->query( $sQuery) or fatal_error( 'MySQL Error1: ' . mysqli_errno() . " " .mysqli_error() );
 
-
-
 /*
  * Output
  */
+
 while ( $aRow = mysqli_fetch_array( $rResult ) )
 {
-    
-	$output = array('post_id' => $aRow['post_id'],'post_title' => $aRow['post_title'],'post_contents' => $aRow['post_content'],'post_keywords' => $aRow['keyword'],'post_description' => $aRow['description'],'url' => $aRow['url'],'img_url' => $aRow['img_url'],'tagss' => $aRow['tag_name']);
-	
-	
-	
+	$output = array('id' => $aRow['id'],'status' => $aRow['status'],'name' => $aRow['name']);
 }
 echo json_encode( $output );
 

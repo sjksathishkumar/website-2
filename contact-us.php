@@ -62,7 +62,7 @@
                         <li><a href="services.php">Services</a></li>
                         <li><a href="tutorials.php">Tutorials</a></li>
                         <li><a href="pricing.php">Pricing</a></li>
-                        <li><a href="blog.php">Blog</a></li>
+                        <li><a href="/blog/index.php">Blog</a></li>
                         <li class="active"><a href="contact-us.php">Contact</a></li>
                     </ul>
                 </div>
@@ -103,24 +103,15 @@
         <div class="row">
             <div class="col-lg-5 col-sm-5 address">
                 <h4>Bass Pris</h4>
-                <p>
+                <p><strong><i>
                     No 60/5,Ground Floor,<br/>
-
-28th Cross Street, <br/>
-
-Indira Nagar, Adyar,    <br/>
-
-Chennai, Tamilnadu ., 600020.<br/>
+                    28th Cross Street, <br/>
+                    Indira Nagar, Adyar,    <br/>
+                    Chennai - 600020, Tamilnadu <br/></strong></i>
                 </p>
-
-                <br>
-                <br>
                 <p>
-                    Phone <br/>
-                    <span class="muted"> 7299040580</span><br/>
-
-                    Email <br/>
-                    <span class="muted">info@basspris.com</span>
+                  <i class="fa fa-phone-square"></i> 7299040580<br/>
+                  <i class="fa fa-envelope"></i> <a href="mailto:info@basspris.com">info@basspris.com</a>
                 </p>
             </div>
             <div class="col-lg-7 col-sm-7 address">
@@ -134,7 +125,7 @@ Chennai, Tamilnadu ., 600020.<br/>
                                 <div class="services">
                                    <div class="content">
                                       <div class="contact-form">
-                                        <form method="post" action="contact-process.php">
+                                        <form method="post" action="contact-process.php" id="contact" name="contact">
                                           <div class="form-group">
                                               <label for="name">Name</label>
                                               <input type="text" id="name"  name="name" class="form-control">
@@ -156,8 +147,8 @@ Chennai, Tamilnadu ., 600020.<br/>
                                               <input type="text" name="address" class="form-control">
                                           </div>
                                           <div class="form-group">
-                                              <label for="message">Message</label>
-                                              <textarea name="message" rows="5" class="form-control"></textarea>
+                                              <label for="msg">Message</label>
+                                              <textarea name="msg" rows="5" class="form-control"></textarea>
                                           </div>
                                           <br> <button class="btn btn-danger" type="submit">Submit</button>
                                         </form>
@@ -191,6 +182,76 @@ Chennai, Tamilnadu ., 600020.<br/>
 
     <!--common script for all pages-->
     <script src="js/common-scripts.js"></script>
+
+    <!-- Script for Validation Form -->
+
+    <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
+    <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $("#contact").validate({
+          rules: {
+            name: "required",
+            company_name: "required",
+            email: {
+              required: true,
+              email: true
+            },
+            mobile: {
+              required: true,
+              digits: true,
+              minlength: 10,
+              maxlength: 10
+            },
+            address: "required", 
+            msg: "required" 
+          },
+          messages: {
+            name: "Please specify your Name",
+            company_name: "Please enter your company name",
+            email: {
+              required: "Please Enter your Email.",
+              email: "Your email address must be in the format of name@domain.com"
+            },
+            mobile: {
+              required: "Please enter Mobile Number"
+            },
+            address: "Please Enter Your Address",
+            msg: "Please Enter Message"
+          },
+          submitHandler:
+              function(){
+              var form = $("#contact");
+              var postData = $("#contact").serializeArray();
+              var formURL = $("#contact").attr("action");
+              $.ajax(
+              {
+                  url : formURL,
+                  type: "POST",
+                  data : postData,
+                  success:function(msg) 
+                  {
+                    if(msg == "success")
+                    {
+                     $(form).fadeOut(800, function(){
+                              form.html('<div class="information"><header>Thanks for your support !</header><p>We will contact you shortly. If you have queries please mail to <strong>info@basspris.com</strong></p></div>').fadeIn().delay(2000);
+                           });
+                   }
+                   else
+                   {
+                    $(form).fadeOut(800, function(){
+                              form.html('<div class="information"><header>Your Application submition Failed!</header><p>Please try again! If you have queries please mail to <strong>info@bassbiz.in</strong></p></div>').fadeIn().delay(2000);
+                           });
+                   }
+                    
+                  }
+              });
+          }
+
+        });
+       });
+  </script>
 
 
   <script>

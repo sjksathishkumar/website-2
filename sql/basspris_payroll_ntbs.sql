@@ -1,4 +1,4 @@
--- MySQL dump 10.13  Distrib 5.5.37, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 5.5.40, for Linux (x86_64)
 --
 -- Host: localhost    Database: basspris_payroll_ntbs
 -- ------------------------------------------------------
@@ -1213,4 +1213,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-10-15 14:26:15
+-- Dump completed on 2014-11-28 11:07:21

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Type" content="text/html; iso-8859-1"/>
-    <meta name="ROBOTS" content="INDEX, FOLLOW"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; iso-8859-1"/>
+  <meta name="ROBOTS" content="INDEX, FOLLOW"/>
 	<meta name="description" content="Bass PRIS Tutorials is a self manual for new subscribers and users"/>
 	<meta name="keywords" content="payroll services, payroll consultants, pris, payroll and recruitment information system, payroll processing"/>
 	<meta name="author" content="Bass PRIS"/>
@@ -56,7 +56,7 @@
                         <li><a href="services.php">Services</a></li>
                         <li class="active"><a href="tutorials.php">Tutorials</a></li>
                         <li><a href="pricing.php">Pricing</a></li>
-                        <li><a href="blog.php">Blog</a></li>
+                        <li><a href="/blog/index.php">Blog</a></li>
                         <li><a href="contact-us.php">Contact</a></li>
                     </ul>
                 </div>

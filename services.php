@@ -4,12 +4,22 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="Mosaddek">
-    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <meta http-equiv="Content-Type" content="text/html; iso-8859-1"/>
+    <meta name="ROBOTS" content="INDEX, FOLLOW"/>
+    <meta name="description" content="Bass PRIS provides you a fully fledged support from preparing CTC to final settlement. Bass PRIS will help in terms of preparation of pay structure, pay slip, MIS report and compliance report"/>
+    <meta name="keywords" content="Payroll outsourcing, payroll consultant, payroll team, payroll advisor, payroll sourcing, Bass PRIS"/>
+    <meta name="author" content="Bass PRIS"/>
+    <meta name="publisher" content="Bass Desio"/>
+    <meta name="copyright" content="Bass PRIS"/>
+    <meta http-equiv="Reply-to" content=antony@basspris.com/>
+    <meta name="creation_Date" content="12/06/2011"/>
+    <meta name="expires" content="11 June 2222"/>
+    <meta name="language" content="EN"/>
+    <meta name="rating" content="general"/>
+    <meta name="revisit-after" content="7 days"/>
     <link rel="shortcut icon" href="img/favicon.png">
 
-    <title>BassPris  | Services | Features</title>
+    <title>Payroll Services | Payroll Application | Payroll Outsource | Recruitment Services |Payroll and Recruitement System | Bass PRIS</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -52,7 +62,7 @@
                         <li class="active"><a href="services.php">Services</a></li>
                         <li><a href="tutorials.php">Tutorials</a></li>
                         <li><a href="pricing.php">Pricing</a></li>
-                        <li><a href="blog.php">Blog</a></li>
+                        <li><a href="/blog/index.php">Blog</a></li>
                         <li><a href="contact-us.php">Contact</a></li>
                     </ul>
                 </div>
